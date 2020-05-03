@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News Explorer Favourite</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+
+<body>
+  <div class="page__favourite">
+
+
+      <header class="header__favourite">
+        <div class="header__container">
+          <img class="header__logo" src="<%=require('./images/NewsExplorerBlack.svg').default%>" alt="">
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__list-item navigation__list-item_active"><a class="link">Главная</a></li>
+              <li class="navigation__list-item"><a>Сохранённые статьи</a></li>
+            </ul>
+
+            <button class="button header__button header__button_black"><p class="username username_black">Грета</p><img class="icon" src="<%=require('./images/logout-black.svg').default%>"></button>
+
+          </nav>
+        </div>
+      </header>
+
+
+
+    <section class="saved-articles">
+
+      <div class="saved-articles__headers">
+        <h3 class="headers saved-articles__header">Сохранённые статьи</h3>
+        <h2 class="headers saved-articles__counter">Грета, у вас 5 сохранённых статей</h2>
+        <p class="saved-articles__keywords">По ключевым словам: <span class="special-keyword">Природа,</span> <span class="special-keyword">Тайга</span> и <span class="special-keyword">2 другим</span></p>
+      </div>
+
+      <div class="articles__saved">
+        <div class="articles__container">
+        <div class="article-card">
+
+          <div class="article-card-top">
+            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="article-card__trash-container">
+              <button class="article-card__trash-button"><img class="article-card__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+            </div>
+            <div class="article-card__keyword">
+              <button class="article-card__keyword-button"><p class="article-card__keyword-text">Природа</p></button>
+            </div>
+          </div>
+
+          <div class="article-card-bottom">
+            <p class="article-card-date">2 августа, 2019</p>
+            <p class="article-card-title">Национальное достояние – парки</p>
+            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="article-card-source">Лента.ру</p>
+          </div>
+
+        </div>
+        <div class="article-card">
+          <div class="article-card-top">
+            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="article-card__trash-container">
+              <button class="article-card__trash-button"><img class="article-card__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+            </div>
+            <div class="article-card__keyword">
+              <button class="article-card__keyword-button"><p class="article-card__keyword-text">Природа</p></button>
+            </div>
+          </div>
+
+          <div class="article-card-bottom">
+            <p class="article-card-date">2 августа, 2019</p>
+            <p class="article-card-title">Национальное достояние – парки</p>
+            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="article-card-source">Лента.ру</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-top">
+            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="article-card__trash-container">
+              <button class="article-card__trash-button"><img class="article-card__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+            </div>
+            <div class="article-card__keyword">
+              <button class="article-card__keyword-button"><p class="article-card__keyword-text">Природа</p></button>
+            </div>
+          </div>
+
+          <div class="article-card-bottom">
+            <p class="article-card-date">2 августа, 2019</p>
+            <p class="article-card-title">Национальное достояние – парки</p>
+            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="article-card-source">Лента.ру</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-top">
+            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="article-card__trash-container">
+              <button class="article-card__trash-button"><img class="article-card__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+            </div>
+            <div class="article-card__keyword">
+              <button class="article-card__keyword-button"><p class="article-card__keyword-text">Природа</p></button>
+            </div>
+          </div>
+
+          <div class="article-card-bottom">
+            <p class="article-card-date">2 августа, 2019</p>
+            <p class="article-card-title">Национальное достояние – парки</p>
+            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="article-card-source">Лента.ру</p>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-card-top">
+            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="article-card__trash-container">
+              <button class="article-card__trash-button"><img class="article-card__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+            </div>
+            <div class="article-card__keyword">
+              <button class="article-card__keyword-button"><p class="article-card__keyword-text">Природа</p></button>
+            </div>
+          </div>
+
+          <div class="article-card-bottom">
+            <p class="article-card-date">2 августа, 2019</p>
+            <p class="article-card-title">Национальное достояние – парки</p>
+            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="article-card-source">Лента.ру</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+
+      <p class="footer__copyright">© 2020 Ignat Anashin</p>
+      <div class="footer__links">
+        <a class="link footer__link_main" href="">Главная</a>
+        <a class="link footer__link_yandex" href="">Яндекс.Практикум</a>
+        <a class="link " href=""><img class="footer__link_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
+        <a class="link " href=""><img class="footer__link_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

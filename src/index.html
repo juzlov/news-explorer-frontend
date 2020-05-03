@@ -20,7 +20,7 @@
           <nav class="navigation">
             <ul class="navigation__list">
               <li class="navigation__list-item navigation__list-item_active"><a class="link">Главная</a></li>
-              <li class="navigation__list-item"><a>Сохранённые статьи</a></li>
+              <li class="navigation__list-item"><a href="Saved_News_Logged_In.html">Сохранённые статьи</a></li>
             </ul>
 
             <button class="button header__button"><p class="username">Грета</p><img class="icon" src="<%=require('./images/Union.png').default%>"></button>
@@ -45,6 +45,13 @@
         <i class="circle-preloader"></i>
         <p class="search-results__loading_text">Идет поиск новостей...</p>
       </div>
+
+      <div class="search-results__no-results">
+        <img src="<%=require('./images/not-found_v1.svg').default%>" alt="">
+        <p class="search-results__no-results_header">Ничего не найдено</p>
+        <p class="search-results__no-results_text">К сожалению по вашему запросу ничего не найдено.</p>
+      </div>
+
       <h2 class="headers search-results__header">Результаты поиска</h2>
       <div class="articles">
         <div class="article-card">
@@ -150,10 +157,10 @@
             <span id="error-login-email" class="error-message error-message__hidden">Неправильный формат email</span>
             <p class="popup__form-pass">Пароль</p>
             <input type="password" name="password" id="login-password" minlength="2" maxlength="30" required class="popup__input popup__input_type_pasword" placeholder="Введите пароль">
-            <span id="error-login-password" class="error-message error-message__hidden"></span>
-            <button type class="button popup__button popup__button_disabled popup-login__button" disabled>Войти</button>
+            <span id="error-login-password" class="error-message error-message__hidden">Неверный логин или пароль</span>
+            <button type class="button popup__button popup-login__button" disabled>Войти</button>
         </form>
-        <p>или <a>Зарегистрироваться</a></p>
+        <p class="popup__text">или<a class="popup__link" href=""> Зарегистрироваться</a></p>
       </div>
     </div>
 
@@ -168,14 +175,14 @@
             <span id="error-signup-email" class="error-message error-message__hidden">Неправильный формат email</span>
             <p class="popup__form-pass">Пароль</p>
             <input type="password" name="password" id="signup-password" minlength="2" maxlength="30" required class="popup__input popup__input_type_pasword" placeholder="Введите пароль">
-            <span id="error-signup-password" class="error-message error-message__hidden"></span>
-            <p>Имя</p>
+            <span id="error-signup-password" class="error-message error-message__hidden">Неправильный формат пароля</span>
+            <p class="popup__form-name">Имя</p>
             <input type="text" name="name" id="name" minlength="2" maxlength="30" required class="popup__input popup__input_type_name" placeholder="Введите своё имя">
             <span id="error-name" class="error-message error-message__hidden"></span>
             <span id="error-server" class="error-message error-message__hidden">Такой пользователь уже есть</span>
             <button type class="button popup__button popup__button_disabled popup-signup__button" disabled>Зарегистрироваться</button>
         </form>
-        <p>или <a>Войти</a></p>
+        <p class="popup__text">или<a class="popup__link" href=""> Войти</a></p>
       </div>
     </div>
 
@@ -184,7 +191,7 @@
       <div class="popup__content">
 
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-        <a>Выполнить вход</a>
+        <a class="popup__link" href="">Выполнить вход</a>
       </div>
     </div>
 
