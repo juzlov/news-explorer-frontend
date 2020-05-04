@@ -1,0 +1,11 @@
+@import url(./_facebook/footer_links_facebook.css);
+@import url(./_github/footer_links_github.css);
+@import url(./_main/footer_links_main.css);
+@import url(./_yandex/footer_links_yandex.css);
+
+.footer__links {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

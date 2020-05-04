@@ -1,0 +1,8 @@
+@import url(./__input_type_email/popup__input_type_email.css);
+@import url(./__input_type_password/popup__input_type_password.css);
+
+.popup__input {
+  border: none;
+  border-bottom: 1px solid #B6BCBF;
+  margin: 1% 0 1% 0;
+}

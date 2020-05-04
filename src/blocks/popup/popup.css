@@ -1,0 +1,13 @@
+@import url(./__close/popup__close.css);
+@import url(./__content/popup__content.css);
+
+
+.popup {
+  border-radius: 16px;
+  background: #FFFFFF;
+  margin: 50px;
+  position: relative;
+  width:  430px;
+  display: flex;
+  justify-content: center;
+}

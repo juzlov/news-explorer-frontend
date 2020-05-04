@@ -1,0 +1,9 @@
+@import url(./__article/articles__article.css);
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-gap: 16px 16px;
+  margin: 0;
+  justify-content: space-between;
+}

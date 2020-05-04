@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>News Explorer</title>
+  <link rel="icon" href="<%=require('./images/favicon.png').default%>" type="image/png">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 
 <body>
   <div class="page">
 
-
-
     <section class="search">
+
       <header class="header">
+
         <div class="header__container">
           <img class="header__logo" src="<%=require('./images/NewsExplorer.png').default%>" alt="">
-          <nav class="navigation">
-            <ul class="navigation__list">
-              <li class="navigation__list-item navigation__list-item_active"><a class="link">Главная</a></li>
-              <li class="navigation__list-item"><a href="Saved_News_Logged_In.html">Сохранённые статьи</a></li>
+
+          <nav class="header__navigation">
+            <ul class="header__navigation-list">
+              <li class="header__navigation-list_item header__navigation-list_item_active"><a class="link">Главная</a></li>
+              <li class="header__navigation-list_item"><a href="Saved_News_Logged_In.html">Сохранённые статьи</a></li>
             </ul>
 
             <button class="button header__button"><p class="username">Грета</p><img class="icon" src="<%=require('./images/Union.png').default%>"></button>
-
           </nav>
-      </div>
+        </div>
+
       </header>
-      <div class="search__headers">
-        <h1 class="search__headers_main">Что в мире творится?</h1>
-        <h2 class="search__headers_second">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
+
+      <div class="search__titles">
+        <h1 class="search__titles_main">Что в мире творится?</h1>
+        <h2 class="search__titles_second">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
       </div>
       <form class="search__form" name="search">
         <input type="text" name="keyword" id="keyword" minlength="2" maxlength="30" required class="search__input" placeholder="Что будем искать?">
@@ -42,94 +45,105 @@
 
     <section class="search-results">
       <div class="search-results__loading">
-        <i class="circle-preloader"></i>
-        <p class="search-results__loading_text">Идет поиск новостей...</p>
+        <i class="search-results__circle-preloader"></i>
+        <p class="search-results__loading-text">Идет поиск новостей...</p>
       </div>
 
       <div class="search-results__no-results">
         <img src="<%=require('./images/not-found_v1.svg').default%>" alt="">
-        <p class="search-results__no-results_header">Ничего не найдено</p>
-        <p class="search-results__no-results_text">К сожалению по вашему запросу ничего не найдено.</p>
+        <p class="search-results__no-results-header">Ничего не найдено</p>
+        <p class="search-results__no-results-text">К сожалению по вашему запросу ничего не найдено.</p>
       </div>
 
-      <h2 class="headers search-results__header">Результаты поиска</h2>
+      <h2 class="search-results__header">Результаты поиска</h2>
+
       <div class="articles">
-        <div class="article-card">
 
-          <div class="article-card-top">
-            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
-            <div class="article-card__fav-container">
-              <button class="article-card__fav-button"><img class="article-card__fav-icon" src="<%=require('./images/rect-normal.svg').default%>"  alt=""></button>
+        <div class="articles__article">
+
+          <div class="articles__article-topside">
+            <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="articles__article-fav-container">
+              <button class="articles__article-fav-button"><img class="articles__article-fav-icon" src="<%=require('./images/rect-normal.svg').default%>"  alt=""></button>
             </div>
           </div>
 
-          <div class="article-card-bottom">
-            <p class="article-card-date">2 августа, 2019</p>
-            <p class="article-card-title">Национальное достояние – парки</p>
-            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="article-card-source">Лента.ру</p>
+          <div class="articles__article-bottom">
+            <p class="articles__article-date">2 августа, 2019</p>
+            <p class="articles__article-title">Национальное достояние – парки</p>
+            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="articles__article-source">Лента.ру</p>
           </div>
 
         </div>
-        <div class="article-card">
-          <div class="article-card-top">
-            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
-            <div class="article-card__fav-container">
-              <button class="article-card__fav-button"><img class="article-card__fav-icon-liked" src="<%=require('./images/rect-marked.svg').default%>"  alt=""></button>
+
+        <div class="articles__article">
+
+          <div class="articles__article-topside">
+            <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="articles__article-fav-container">
+              <button class="article-card__fav-button"><img class="articles__article-fav-icon_liked" src="<%=require('./images/rect-marked.svg').default%>"  alt=""></button>
             </div>
           </div>
 
-          <div class="article-card-bottom">
-            <p class="article-card-date">2 августа, 2019</p>
-            <p class="article-card-title">Национальное достояние – парки</p>
-            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="article-card-source">Лента.ру</p>
+          <div class="articles__article-bottom">
+            <p class="articles__article-date">2 августа, 2019</p>
+            <p class="articles__article-title">Национальное достояние – парки</p>
+            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="articles__article-source">Лента.ру</p>
           </div>
+
         </div>
-        <div class="article-card">
-          <div class="article-card-top">
-            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
-            <div class="article-card__fav-container">
-              <button class="article-card__fav-button"><img class="article-card__fav-icon article-card__fav-icon-liked" src="<%=require('./images/rect-normal.svg').default%>" alt=""></button>
+        <div class="articles__article">
+
+          <div class="articles__article-topside">
+            <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="articles__article-fav-container">
+              <button class="articles__article-fav-button"><img class="articles__article-fav-icon" src="<%=require('./images/rect-normal.svg').default%>"  alt=""></button>
             </div>
           </div>
 
-          <div class="article-card-bottom">
-            <p class="article-card-date">2 августа, 2019</p>
-            <p class="article-card-title">Национальное достояние – парки</p>
-            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="article-card-source">Лента.ру</p>
+          <div class="articles__article-bottom">
+            <p class="articles__article-date">2 августа, 2019</p>
+            <p class="articles__article-title">Национальное достояние – парки</p>
+            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="articles__article-source">Лента.ру</p>
           </div>
+
         </div>
-        <div class="article-card">
-          <div class="article-card-top">
-            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
-            <div class="article-card__fav-container">
-              <button class="article-card__fav-button"><img class="article-card__fav-icon article-card__fav-icon-liked" src="<%=require('./images/rect-normal.svg').default%>" alt=""></button>
+        <div class="articles__article">
+
+          <div class="articles__article-topside">
+            <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="articles__article-fav-container">
+              <button class="articles__article-fav-button"><img class="articles__article-fav-icon" src="<%=require('./images/rect-normal.svg').default%>"  alt=""></button>
             </div>
           </div>
 
-          <div class="article-card-bottom">
-            <p class="article-card-date">2 августа, 2019</p>
-            <p class="article-card-title">Национальное достояние – парки</p>
-            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="article-card-source">Лента.ру</p>
+          <div class="articles__article-bottom">
+            <p class="articles__article-date">2 августа, 2019</p>
+            <p class="articles__article-title">Национальное достояние – парки</p>
+            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="articles__article-source">Лента.ру</p>
           </div>
+
         </div>
-        <div class="article-card">
-          <div class="article-card-top">
-            <img class="article-card-image" src="<%=require('./images/image_08.png').default%>" alt="">
-            <div class="article-card__fav-container">
-              <button class="article-card__fav-button"><img class="article-card__fav-icon article-card__fav-icon-liked" src="<%=require('./images/rect-normal.svg').default%>" alt=""></button>
+        <div class="articles__article">
+
+          <div class="articles__article-topside">
+            <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+            <div class="articles__article-fav-container">
+              <button class="articles__article-fav-button"><img class="articles__article-fav-icon" src="<%=require('./images/rect-normal.svg').default%>"  alt=""></button>
             </div>
           </div>
 
-          <div class="article-card-bottom">
-            <p class="article-card-date">2 августа, 2019</p>
-            <p class="article-card-title">Национальное достояние – парки</p>
-            <p class="article-card-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="article-card-source">Лента.ру</p>
+          <div class="articles__article-bottom">
+            <p class="articles__article-date">2 августа, 2019</p>
+            <p class="articles__article-title">Национальное достояние – парки</p>
+            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="articles__article-source">Лента.ру</p>
           </div>
+
         </div>
       </div>
       <button class="button search-results__button">Показать еще</button>
@@ -138,9 +152,9 @@
     <section class="about-author">
       <img class="about-author__image" src="<%=require('./images/author.jpg').default%>">
       <div class="about-author__text">
-        <h2 class="about-author__headers_main">Об авторе</h2>
-        <p class="about-text_main">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="about-text_main">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        <h2 class="about-author__main-title">Об авторе</h2>
+        <p class="about-author__main-text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+        <p class="about-author__main-text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
       </div>
     </section>
 
@@ -148,20 +162,22 @@
 
     <div class="popup popup-login">
       <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup-login__close">
+
       <div class="popup__content">
 
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="login">
-            <p class="popup__form-email">Email</p>
+            <p class="popup__email">Email</p>
             <input type="email" name="email" id="login-email" minlength="2" maxlength="30" required class="popup__input popup__input_type_email" placeholder="Введите почту">
-            <span id="error-login-email" class="error-message error-message__hidden">Неправильный формат email</span>
-            <p class="popup__form-pass">Пароль</p>
+            <span id="error-login-email" class="error-message error-message_hidden">Неправильный формат email</span>
+            <p class="popup__pass">Пароль</p>
             <input type="password" name="password" id="login-password" minlength="2" maxlength="30" required class="popup__input popup__input_type_pasword" placeholder="Введите пароль">
-            <span id="error-login-password" class="error-message error-message__hidden">Неверный логин или пароль</span>
+            <span id="error-login-password" class="error-message error-message_hidden">Неверный логин или пароль</span>
             <button type class="button popup__button popup-login__button" disabled>Войти</button>
         </form>
         <p class="popup__text">или<a class="popup__link" href=""> Зарегистрироваться</a></p>
       </div>
+
     </div>
 
     <div class="popup popup-signup">
@@ -170,15 +186,15 @@
 
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup">
-            <p class="popup__form-email">Email</p>
+            <p class="popup__email">Email</p>
             <input type="email" name="email" id="signup-email" minlength="2" maxlength="30" required class="popup__input popup__input_type_email" placeholder="Введите почту">
-            <span id="error-signup-email" class="error-message error-message__hidden">Неправильный формат email</span>
-            <p class="popup__form-pass">Пароль</p>
+            <span id="error-signup-email" class="error-message error-message_hidden">Неправильный формат email</span>
+            <p class="popup__pass">Пароль</p>
             <input type="password" name="password" id="signup-password" minlength="2" maxlength="30" required class="popup__input popup__input_type_pasword" placeholder="Введите пароль">
-            <span id="error-signup-password" class="error-message error-message__hidden">Неправильный формат пароля</span>
-            <p class="popup__form-name">Имя</p>
+            <span id="error-signup-password" class="error-message error-message_hidden">Неправильный формат пароля</span>
+            <p class="popup__name">Имя</p>
             <input type="text" name="name" id="name" minlength="2" maxlength="30" required class="popup__input popup__input_type_name" placeholder="Введите своё имя">
-            <span id="error-name" class="error-message error-message__hidden"></span>
+            <span id="error-name" class="error-message error-message_hidden"></span>
             <span id="error-server" class="error-message error-message__hidden">Такой пользователь уже есть</span>
             <button type class="button popup__button popup__button_disabled popup-signup__button" disabled>Зарегистрироваться</button>
         </form>
@@ -199,10 +215,10 @@
 
       <p class="footer__copyright">© 2020 Ignat Anashin</p>
       <div class="footer__links">
-        <a class="link footer__link_main" href="">Главная</a>
-        <a class="link footer__link_yandex" href="">Яндекс.Практикум</a>
-        <a class="link " href=""><img class="footer__link_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
-        <a class="link " href=""><img class="footer__link_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
+        <a class="link footer__links_main" href="">Главная</a>
+        <a class="link footer__links_yandex" href="">Яндекс.Практикум</a>
+        <a class="link " href=""><img class="footer__links_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
+        <a class="link " href=""><img class="footer__links_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
       </div>
     </footer>
   </div>

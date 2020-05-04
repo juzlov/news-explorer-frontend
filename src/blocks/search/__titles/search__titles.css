@@ -1,0 +1,8 @@
+@import url(./_main/search__titles_main.css);
+@import url(./_second/search__titles_second.css);
+
+.search__titles {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+}

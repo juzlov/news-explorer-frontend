@@ -1,0 +1,16 @@
+.search-results__button {
+  width: 288px;
+  height: 64px;
+  background: #FFFFFF;
+  border-radius: 80px;
+  border: none;
+  align-self: center;
+  margin: 64px auto 80px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  color: #1A1B22;
+}

@@ -1,0 +1,12 @@
+@import url(./_active/header__navigation-list_item_active.css);
+
+.header__navigation-list_item {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.3em;
+  list-style-type: none;
+  margin-right: 34px;
+}
+

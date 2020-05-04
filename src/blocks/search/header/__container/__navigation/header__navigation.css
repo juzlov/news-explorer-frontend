@@ -1,0 +1,7 @@
+@import url(./__navigation-list/header__navigation-list.css);
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}

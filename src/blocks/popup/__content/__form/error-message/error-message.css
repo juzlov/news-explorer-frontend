@@ -1,0 +1,32 @@
+@import url(./_hidden/error-message_hidden.css);
+
+.error-message {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #FF0000;
+}
+
+
+#error-login-password {
+  text-align: center;
+  margin: 5% 0 2% 0;
+}
+
+#error-login-email {
+  margin: 2% 0 0 0;
+}
+
+#error-signup-email {
+  margin: 2% 0 0 0;
+}
+
+#error-signup-password {
+  margin: 2% 0 0 0;
+}
+
+#error-server {
+  text-align: center;
+  margin: 5% 0 2% 0;
+}

@@ -1,0 +1,11 @@
+@import url(./__article-date/articles__article-date.css);
+@import url(./__article-source/articles__article-source.css);
+@import url(./__article-text/articles__article-text.css);
+@import url(./__article-title/articles__article-title.css);
+
+.articles__article-bottom {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}

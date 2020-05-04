@@ -1,0 +1,16 @@
+.header__button {
+  width: 25%;
+  height: 3em;
+  border: 1px solid #FFFFFF;
+  background: none;
+  box-sizing: border-box;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.header__button_black {
+  border: 1px solid #D1D2D6;
+  margin: 3% 0 3% 0;
+}
+

@@ -1,0 +1,16 @@
+@import url(./header/header.css);
+@import url(./__titles/search__titles.css);
+@import url(./__form/search__form.css);
+
+.search {
+  position: relative;
+  max-width: 1440px;
+  min-height: 576px;
+  width: 100%;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png);
+}
