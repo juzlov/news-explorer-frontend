@@ -7,3 +7,26 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+@media (max-width: 425px) {
+  .about-author {
+      max-width: 425px;
+      width: 90%;
+      justify-content: center;
+      flex-direction: column;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .about-author {
+      max-width: 768px;
+      width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-author {
+      max-width: 1024px;
+      width: 90%;
+  }
+}

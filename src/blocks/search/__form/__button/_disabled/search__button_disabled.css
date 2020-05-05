@@ -1,0 +1,9 @@
+.search__button_disabled {
+  width: 35%;
+  border: none;
+  background: #E6E8EB;
+  color: #B6BCBF;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: 100px;
+  margin: 0 0 0 -20%;
+}

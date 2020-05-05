@@ -10,3 +10,21 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 425px) {
+  .articles__article {
+      max-width: 288px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .articles__article {
+      max-width: 224px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .articles__article {
+      max-width: 400px;
+  }
+}

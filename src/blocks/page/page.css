@@ -15,3 +15,24 @@
   background-color: #F5F6F7;
   color: #1A1B22;
 }
+
+@media (max-width: 425px) {
+  .page {
+      width: 100%;
+      max-width: 425px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .page {
+      width: 100%;
+      max-width: 768px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page {
+      width: 100%;
+      max-width: 1024px;
+  }
+}

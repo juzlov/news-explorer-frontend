@@ -5,3 +5,10 @@
   border: none;
   padding-left: 20px;
 }
+
+@media (max-width: 425px) {
+  .search__input {
+    width: 90%;
+    height: 3em;
+  }
+}

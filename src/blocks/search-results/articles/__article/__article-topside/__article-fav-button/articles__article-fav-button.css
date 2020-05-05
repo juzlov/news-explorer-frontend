@@ -5,4 +5,23 @@
   height: 100%;
   border-radius: 8px;
   border: none;
+  display: contents;
+}
+
+@media (max-width: 425px) {
+  .articles__article-fav-button {
+      max-width: 288px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .articles__article-fav-button {
+      max-width: 224px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .articles__article-fav-button {
+      max-width: 400px;
+  }
 }

@@ -9,3 +9,19 @@
   border-radius: 100px;
   margin: 0 0 0 -20%;
 }
+
+.search__button:hover {
+  background: #347EFF;
+}
+
+.search__button:active {
+  background: #2A65CC;
+}
+
+@media (max-width: 425px) {
+  .search__button {
+    margin: 5% 0 0 0;
+    width: 95%;
+    height: 3em;
+  }
+}

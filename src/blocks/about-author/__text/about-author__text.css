@@ -5,3 +5,9 @@
   width: 50%;
   margin-top: -10%;
 }
+
+@media (max-width: 425px) {
+  .about-author__text {
+    width: 90%;
+  }
+}

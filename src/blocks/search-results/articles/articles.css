@@ -7,3 +7,28 @@
   margin: 0;
   justify-content: space-between;
 }
+
+@media (max-width: 425px) {
+  .articles {
+      max-width: 425px;
+      grid-template-columns: 1fr;
+      justify-items: center;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .articles {
+      max-width: 768px;
+      grid-template-columns: repeat(auto-fill, 224px);
+      grid-gap: 8px 8px;
+      justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .articles {
+      max-width: 1024px;
+      grid-template-columns: repeat(auto-fill, 288px);
+      justify-content: center;
+  }
+}

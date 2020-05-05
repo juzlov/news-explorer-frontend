@@ -8,3 +8,24 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@media (max-width: 425px) {
+  .header__container {
+      max-width: 425px;
+      width: 90%;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header__container {
+      max-width: 768px;
+      width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header__container {
+      max-width: 1024px;
+      width: 90%;
+  }
+}

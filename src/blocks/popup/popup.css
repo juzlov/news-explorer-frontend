@@ -11,3 +11,25 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 425px) {
+  .popup {
+      max-width: 425px;
+      width: 100%;
+      margin: 50px 0 50px 0;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .popup {
+      max-width: 768px;
+      width: 50%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .popup {
+      max-width: 1024px;
+      width: 50%;
+  }
+}

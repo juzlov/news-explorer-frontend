@@ -12,3 +12,24 @@
   background: rgba(255, 255, 255, 0.01);
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
 }
+
+@media (max-width: 425px) {
+  .header {
+      max-width: 425px;
+      width: 100%;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header {
+      max-width: 768px;
+      width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+      max-width: 1024px;
+      width: 100%;
+  }
+}

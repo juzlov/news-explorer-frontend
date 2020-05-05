@@ -14,3 +14,7 @@
   line-height: 1.4em;
   color: #1A1B22;
 }
+
+.search-results__button:hover {
+  opacity: 0.85;
+}

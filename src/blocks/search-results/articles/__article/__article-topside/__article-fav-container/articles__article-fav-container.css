@@ -10,3 +10,21 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .articles__article-fav-container {
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .articles__article-fav-container {
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+  }
+}

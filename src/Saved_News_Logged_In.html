@@ -15,15 +15,15 @@
     <header class="header-favourite">
 
       <div class="header__container">
-        <img class="header__logo" src="<%=require('./images/NewsExplorerBlack.svg').default%>" alt="">
-        <nav class="navigation">
-          <ul class="navigation__list">
-            <li class="navigation__list-item navigation__list-item_active"><a class="link">Главная</a></li>
-            <li class="navigation__list-item"><a>Сохранённые статьи</a></li>
+        <a class="link"><img class="header__logo" src="<%=require('./images/NewsExplorerBlack.svg').default%>" alt=""></a>
+        <nav class="header__navigation">
+          <ul class="header__navigation-list">
+            <li class="header__navigation-list_item"><a class="link header__links_black" href="">Главная</a></li>
+            <li class="header__navigation-list_item header__navigation-list_item_active"><a href="" class="link header__links_black">Сохранённые статьи</a></li>
           </ul>
 
-          <button class="button header__button header__button_black">
-            <p class="username username_black">Грета</p>
+          <button class="button link header__button header__button_black">
+            <a class="username username_black">Грета</a>
             <img class="icon" src="<%=require('./images/logout-black.svg').default%>">
           </button>
 
@@ -37,20 +37,20 @@
       <div class="saved-articles__titles">
         <h3 class="saved-articles__title">Сохранённые статьи</h3>
         <h2 class="saved-articles__counter">Грета, у вас 5 сохранённых статей</h2>
-        <p class="saved-articles__keywords">По ключевым словам: <span class="special-keyword">Природа,</span> <span class="special-keyword">Тайга</span> и <span class="special-keyword">2 другим</span></p>
+        <p class="saved-articles__keywords">По ключевым словам: <a class="special-keyword link">Природа,</a><a class="special-keyword link">Тайга</a> и <span class="special-keyword">2 другим</span></p>
       </div>
 
       <div class="saved-articles-list">
-        <div class="saved-articles__container">
+        <div class="saved-articles-list__container">
 
           <div class="articles__article">
             <div class="articles__article-topside">
-              <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
-                <button class="saved-articles__trash-button"><img class="saved-articles__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+                <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
               <div class="saved-articles__article-keyword">
-                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text">Природа</p></button>
+                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text link">Природа</p></button>
               </div>
             </div>
 
@@ -58,18 +58,18 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <p class="articles__article-source">Лента.ру</p>
+              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-              <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
-                <button class="saved-articles__trash-button"><img class="saved-articles__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+                <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
               <div class="saved-articles__article-keyword">
-                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text">Природа</p></button>
+                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text link">Природа</p></button>
               </div>
             </div>
 
@@ -77,18 +77,18 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <p class="articles__article-source">Лента.ру</p>
+              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-              <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
-                <button class="saved-articles__trash-button"><img class="saved-articles__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+                <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
               <div class="saved-articles__article-keyword">
-                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text">Природа</p></button>
+                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text link">Природа</p></button>
               </div>
             </div>
 
@@ -96,18 +96,18 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <p class="articles__article-source">Лента.ру</p>
+              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-              <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
-                <button class="saved-articles__trash-button"><img class="saved-articles__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+                <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
               <div class="saved-articles__article-keyword">
-                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text">Природа</p></button>
+                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text link">Природа</p></button>
               </div>
             </div>
 
@@ -115,18 +115,18 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <p class="articles__article-source">Лента.ру</p>
+              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-              <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="">
+             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
-                <button class="saved-articles__trash-button"><img class="saved-articles__trash-icon" src="<%=require('./images/trash.svg').default%>"  alt=""></button>
+                <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
               <div class="saved-articles__article-keyword">
-                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text">Природа</p></button>
+                <button class="saved-articles__keyword-button"><p class="saved-articles__keyword-text link">Природа</p></button>
               </div>
             </div>
 
@@ -134,7 +134,7 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <p class="articles__article-source">Лента.ру</p>
+              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
@@ -146,14 +146,12 @@
     <footer class="footer">
 
       <p class="footer__copyright">© 2020 Ignat Anashin</p>
-
       <div class="footer__links">
-        <a class="link footer__link_main" href="">Главная</a>
-        <a class="link footer__link_yandex" href="">Яндекс.Практикум</a>
-        <a class="link " href=""><img class="footer__link_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
-        <a class="link " href=""><img class="footer__link_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
+        <a class="link footer__links_main" href="">Главная</a>
+        <a class="link footer__links_yandex" href="">Яндекс.Практикум</a>
+        <a class="link " href=""><img class="footer__links_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
+        <a class="link " href=""><img class="footer__links_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
       </div>
-
     </footer>
 
   </div>

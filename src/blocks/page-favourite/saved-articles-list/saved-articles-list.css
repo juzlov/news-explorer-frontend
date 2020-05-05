@@ -1,0 +1,30 @@
+@import url(./__container/saved-articles-list__container.css);
+
+.saved-articles-list {
+  background: #F5F6F7;
+  padding: 3em 0 3em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 425px) {
+  .saved-articles-list {
+      max-width: 425px;
+      width: 100%;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles-list {
+      max-width: 768px;
+      width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles-list {
+      max-width: 1024px;
+      width: 90%;
+  }
+}

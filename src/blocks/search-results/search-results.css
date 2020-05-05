@@ -12,3 +12,24 @@
   width: 90%;
   align-content: center;
 }
+
+@media (max-width: 425px) {
+  .search-results {
+      max-width: 425px;
+      width: 90%;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .search-results {
+      max-width: 768px;
+      width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-results {
+      max-width: 1024px;
+      width: 90%;
+  }
+}

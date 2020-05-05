@@ -1,0 +1,33 @@
+@import url(./__titles/saved-articles__titles.css);
+@import url(./__titles/saved-articles__titles.css);
+
+.saved-articles {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  max-width: 1440px;
+  width: 100%;
+  align-content: center;
+  align-items:  center;
+}
+
+@media (max-width: 425px) {
+  .saved-articles {
+      max-width: 425px;
+      width: 100%;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles {
+      max-width: 768px;
+      width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles {
+      max-width: 1024px;
+      width: 90%;
+  }
+}

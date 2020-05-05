@@ -9,3 +9,22 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media (max-width: 425px) {
+  .footer__links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .footer__links {
+    width: 50%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer__links {
+    width: 40%;
+  }
+}
