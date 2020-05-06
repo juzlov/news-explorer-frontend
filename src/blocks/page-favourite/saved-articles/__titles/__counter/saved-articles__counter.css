@@ -6,3 +6,22 @@
   color: #1A1B22;
   max-width: 35%;
 }
+
+@media (max-width: 425px) {
+  .saved-articles__counter {
+    max-width: 75%;
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles__counter {
+      max-width: 75%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles__counter {
+    max-width: 75%;
+  }
+}

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Сохранённые пользователем статьи">
+  <meta name="author" content="Ignat Anashin">
   <title>News Explorer Favourite</title>
   <link rel="icon" type="image/png" sizes="32x32" href="<%=require('./images/favicon.png').default%>">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
@@ -15,15 +17,15 @@
     <header class="header-favourite">
 
       <div class="header__container">
-        <a class="link"><img class="header__logo" src="<%=require('./images/NewsExplorerBlack.svg').default%>" alt=""></a>
+        <a class="link" href="./index.html"><img class="header__logo" src="<%=require('./images/NewsExplorerBlack.svg').default%>" alt=""></a>
         <nav class="header__navigation">
           <ul class="header__navigation-list">
-            <li class="header__navigation-list_item"><a class="link header__links_black" href="">Главная</a></li>
-            <li class="header__navigation-list_item header__navigation-list_item_active"><a href="" class="link header__links_black">Сохранённые статьи</a></li>
+            <li class="header__navigation-list_item"><a class="link header__links_black" href="./index.html">Главная</a></li>
+            <li class="header__navigation-list_item header__navigation-list_item_active"><a href="./Saved_News_Logged_In" class="link header__links_black">Сохранённые статьи</a></li>
           </ul>
 
           <button class="button link header__button header__button_black">
-            <a class="username username_black">Грета</a>
+            <p class="username username_black">Грета</p>
             <img class="icon" src="<%=require('./images/logout-black.svg').default%>">
           </button>
 
@@ -37,7 +39,7 @@
       <div class="saved-articles__titles">
         <h3 class="saved-articles__title">Сохранённые статьи</h3>
         <h2 class="saved-articles__counter">Грета, у вас 5 сохранённых статей</h2>
-        <p class="saved-articles__keywords">По ключевым словам: <a class="special-keyword link">Природа,</a><a class="special-keyword link">Тайга</a> и <span class="special-keyword">2 другим</span></p>
+        <p class="saved-articles__keywords">По ключевым словам: <a class="special-keyword link">Природа, </a><a class="special-keyword link">Тайга</a> и <span class="special-keyword">2 другим</span></p>
       </div>
 
       <div class="saved-articles-list">
@@ -45,7 +47,7 @@
 
           <div class="articles__article">
             <div class="articles__article-topside">
-             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
+             <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
                 <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
@@ -64,7 +66,7 @@
 
           <div class="articles__article">
             <div class="articles__article-topside">
-             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
+             <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
                 <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
@@ -77,13 +79,13 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
+              <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
+             <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
                 <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
@@ -96,13 +98,13 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
+              <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
+             <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
                 <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
@@ -115,13 +117,13 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
+              <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
           <div class="articles__article">
             <div class="articles__article-topside">
-             <a class="link" href=""><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
+             <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt=""></a>
               <div class="saved-articles__trash-container">
                 <button class="saved-articles__trash-button link"><img class="saved-articles__trash-icon" alt=""></button>
               </div>
@@ -134,7 +136,7 @@
               <p class="articles__article-date">2 августа, 2019</p>
               <p class="articles__article-title">Национальное достояние – парки</p>
               <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <a class="link"><p class="articles__article-source">Лента.ру</p></a>
+              <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
             </div>
           </div>
 
@@ -147,10 +149,10 @@
 
       <p class="footer__copyright">© 2020 Ignat Anashin</p>
       <div class="footer__links">
-        <a class="link footer__links_main" href="">Главная</a>
-        <a class="link footer__links_yandex" href="">Яндекс.Практикум</a>
-        <a class="link " href=""><img class="footer__links_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
-        <a class="link " href=""><img class="footer__links_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
+        <a class="link footer__links_main" href="./index.html">Главная</a>
+        <a class="link footer__links_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+        <a class="link " href="https://github.com/juzlov/"><img class="footer__links_github" src="<%=require('./images/github.svg').default%>" alt=""></a>
+        <a class="link " href="https://www.facebook.com/"><img class="footer__links_facebook" src="<%=require('./images/facebook.svg').default%>" alt=""></a>
       </div>
     </footer>
 

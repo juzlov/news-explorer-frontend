@@ -13,6 +13,12 @@
 
 @media (min-width: 426px) and (max-width: 768px) {
   .search__titles_main {
-    font-size: 3em;
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search__titles_main {
+    font-size: 3.5em;
   }
 }

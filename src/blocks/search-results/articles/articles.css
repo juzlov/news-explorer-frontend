@@ -2,7 +2,7 @@
 
 .articles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   grid-gap: 16px 16px;
   margin: 0;
   justify-content: space-between;
@@ -21,14 +21,12 @@
       max-width: 768px;
       grid-template-columns: repeat(auto-fill, 224px);
       grid-gap: 8px 8px;
-      justify-content: center;
+      justify-content: unset;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .articles {
       max-width: 1024px;
-      grid-template-columns: repeat(auto-fill, 288px);
-      justify-content: center;
   }
 }

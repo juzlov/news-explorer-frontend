@@ -7,3 +7,18 @@
   color: #000000;
   margin: 0.6em;
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles__article-keyword {
+    font-size: 0.8em;
+    line-height: 1em;
+    margin: 0.3em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles__trash-container {
+    line-height: 1em;
+    margin: 0.3em;
+  }
+}

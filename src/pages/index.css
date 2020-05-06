@@ -18,19 +18,10 @@ body {
   cursor: url('../images/lapka.svg'), pointer;
 }
 
-.icon {
-  margin: 5px 5px 5px 5px;
+.disabled {
+  display: none;
 }
 
-.username {
-  margin: 5px 0px 5px 10px;
-  color: #FFFFFF;
-}
 
-.username_black {
-  color: #1A1B22;
-}
 
-.special-keyword {
-  font-weight: bold;
-}
+

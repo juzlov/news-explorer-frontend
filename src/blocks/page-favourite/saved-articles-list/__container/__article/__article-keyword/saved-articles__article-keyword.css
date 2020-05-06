@@ -11,3 +11,23 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles__article-keyword {
+    top: 16px;
+    left: 16px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles__article-keyword {
+    top: 16px;
+    left: 16px;
+    margin: 0;
+  }
+}
+
+.special-keyword {
+  font-weight: bold;
+}
