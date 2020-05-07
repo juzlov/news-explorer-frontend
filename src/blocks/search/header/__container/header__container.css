@@ -1,6 +1,7 @@
 @import url(./__button/header__button.css);
 @import url(./__logo/header__logo.css);
 @import url(./__navigation/header__navigation.css);
+@import url(./__mini-menu/header__mini-menu.css);
 
 .header__container {
   width: 90%;
@@ -8,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 
 @media (max-width: 425px) {
   .header__container {
