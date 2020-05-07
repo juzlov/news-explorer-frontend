@@ -8,7 +8,7 @@
   <meta name="author" content="Ignat Anashin">
   <title>News Explorer</title>
   <link rel="icon" href="./images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.ba7e3515e2a68f22431b.css">
+  <link rel="stylesheet" href="style.f50510bdd47c174ac103.css">
 </head>
 
 <body>
@@ -19,15 +19,15 @@
       <header class="header">
 
         <div class="header__container">
-          <a class="link" href="./index.html"><img class="header__logo" src="./images/NewsExplorer.svg" alt=""></a>
-
+          <a class="link" href="./index.html" target="_blank"><img class="header__logo" src="./images/NewsExplorer.svg" alt="NewsExplorer logo"></a>
+          <button class="header__mini-menu"><img class="header__menu-logo" src="./images/menu.svg" alt="mini menu button"></button>
           <nav class="header__navigation">
             <ul class="header__navigation-list">
-              <li class="header__navigation-list_item header__navigation-list_item_active"><a class="link header__links_white" href="./index.html">Главная</a></li>
-              <li class="header__navigation-list_item"><a href="./Saved_News_Logged_In.html" class="link header__links_white">Сохранённые статьи</a></li>
+              <li class="header__navigation-list_item header__navigation-list_item_active"><a class="link header__links_white" href="./index.html" target="_blank">Главная</a></li>
+              <li class="header__navigation-list_item"><a href="./Saved_News_Logged_In.html" class="link header__links_white" target="_blank">Сохранённые статьи</a></li>
             </ul>
 
-            <button class="button link header__button"><p class="username">Грета</p><img class="icon" src="./images/logout.svg"></button>
+            <button class="button link header__button username">Грета<img class="icon" src="./images/logout.svg" alt="logout"></button>
           </nav>
         </div>
 
@@ -39,7 +39,7 @@
       </div>
       <form class="search__form" name="search">
         <input type="text" name="keyword" id="keyword" minlength="2" maxlength="30" required class="search__input" placeholder="Что будем искать?">
-        <button class="button search__button search__button_disabled" disabled><p class="link">Искать</p></button>
+        <button class="button search__button search__button_disabled link" disabled>Искать</button>
       </form>
     </section>
 
@@ -52,7 +52,7 @@
       </div>
 
       <div class="search-results__no-results disabled">
-        <img src="./images/not-found_v1.svg" alt="">
+        <img src="./images/not-found_v1.svg" alt="not found">
         <p class="search-results__no-results-header">Ничего не найдено</p>
         <p class="search-results__no-results-text">К сожалению по вашему запросу ничего не найдено.</p>
       </div>
@@ -64,9 +64,9 @@
         <div class="articles__article">
 
           <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="./images/image_08.png" alt=""></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="./images/image_08.png" alt="image of event"></a>
             <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button"><img class="articles__article-fav-icon link" alt=""></button>
+              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
             </div>
           </div>
 
@@ -74,7 +74,7 @@
             <p class="articles__article-date">2 августа, 2019</p>
             <p class="articles__article-title">Национальное достояние – парки</p>
             <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
           </div>
 
         </div>
@@ -82,9 +82,9 @@
         <div class="articles__article">
 
           <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="./images/image_08.png" alt=""></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="./images/image_08.png" alt="image of event"></a>
             <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button"><img class="articles__article-fav-icon_liked link"   alt=""></button>
+              <button class="articles__article-fav-button articles__article-fav-icon_liked link"></button>
             </div>
           </div>
 
@@ -92,7 +92,7 @@
             <p class="articles__article-date">2 августа, 2019</p>
             <p class="articles__article-title">Национальное достояние – парки</p>
             <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
           </div>
 
         </div>
@@ -100,9 +100,9 @@
         <div class="articles__article">
 
           <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="./images/image_08.png" alt=""></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="./images/image_08.png" alt="image of event"></a>
             <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button"><img class="articles__article-fav-icon link" alt=""></button>
+              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <p class="articles__article-date">2 августа, 2019</p>
             <p class="articles__article-title">Национальное достояние – парки</p>
             <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
           </div>
 
         </div>
@@ -118,9 +118,9 @@
         <div class="articles__article">
 
           <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="./images/image_08.png" alt=""></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="./images/image_08.png" alt="image of event"></a>
             <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button"><img class="articles__article-fav-icon link" alt=""></button>
+              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
             </div>
           </div>
 
@@ -128,7 +128,7 @@
             <p class="articles__article-date">2 августа, 2019</p>
             <p class="articles__article-title">Национальное достояние – парки</p>
             <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
           </div>
 
         </div>
@@ -136,9 +136,9 @@
         <div class="articles__article">
 
           <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><img class="articles__article-image" src="./images/image_08.png" alt=""></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="./images/image_08.png" alt="image of event"></a>
             <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button"><img class="articles__article-fav-icon link" alt=""></button>
+              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
             </div>
           </div>
 
@@ -146,7 +146,7 @@
             <p class="articles__article-date">2 августа, 2019</p>
             <p class="articles__article-title">Национальное достояние – парки</p>
             <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/"><p class="articles__article-source">Лента.ру</p></a>
+            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
           </div>
 
         </div>
@@ -155,7 +155,7 @@
     </section>
 
     <section class="about-author">
-      <img class="about-author__image" src="./images/author.jpg">
+      <img class="about-author__image" src="./images/author.jpg" alt="author selfie">
       <div class="about-author__text">
         <h2 class="about-author__main-title">Об авторе</h2>
         <p class="about-author__main-text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
@@ -166,7 +166,7 @@
 
 
     <div class="popup popup-login disabled">
-      <img src="./images/close.svg" alt="" class="popup__close link popup-login__close">
+      <img src="./images/close.svg" alt="close cross" class="popup__close link popup-login__close">
 
       <div class="popup__content">
 
@@ -178,7 +178,7 @@
             <p class="popup__pass">Пароль</p>
             <input type="password" name="password" id="login-password" minlength="2" maxlength="30" required class="popup__input popup__input_type_pasword" placeholder="Введите пароль">
             <span id="error-login-password" class="error-message error-message_hidden">Неверный логин или пароль</span>
-            <button type class="button link popup__button popup-login__button" disabled>Войти</button>
+            <button class="button link popup__button popup-login__button" disabled>Войти</button>
         </form>
         <p class="popup__text">или<a class="popup__link " href=""> Зарегистрироваться</a></p>
       </div>
@@ -186,7 +186,7 @@
     </div>
 
     <div class="popup popup-signup disabled">
-      <img src="./images/close.svg" alt="" class="popup__close link popup-signup__close">
+      <img src="./images/close.svg" alt="close cross" class="popup__close link popup-signup__close">
       <div class="popup__content">
 
         <h3 class="popup__title">Регистрация</h3>
@@ -201,14 +201,14 @@
             <input type="text" name="name" id="name" minlength="2" maxlength="30" required class="popup__input popup__input_type_name" placeholder="Введите своё имя">
             <span id="error-name" class="error-message error-message_hidden"></span>
             <span id="error-server" class="error-message error-message__hidden">Такой пользователь уже есть</span>
-            <button type class="button link popup__button popup__button_disabled popup-signup__button" disabled>Зарегистрироваться</button>
+            <button class="button link popup__button popup__button_disabled popup-signup__button" disabled>Зарегистрироваться</button>
         </form>
         <p class="popup__text">или<a class="popup__link link" href=""> Войти</a></p>
       </div>
     </div>
 
     <div class="popup popup-signup-success disabled">
-      <img src="./images/close.svg" alt="" class="popup__close link popup-signup__close">
+      <img src="./images/close.svg" alt="close cross" class="popup__close link popup-signup__close">
       <div class="popup__content">
 
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
@@ -220,10 +220,10 @@
 
       <p class="footer__copyright">© 2020 Ignat Anashin</p>
       <div class="footer__links">
-        <a class="link footer__links_main" href="./index.html">Главная</a>
-        <a class="link footer__links_yandex" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-        <a class="link " href="https://github.com/juzlov/"><img class="footer__links_github" src="./images/github.svg" alt=""></a>
-        <a class="link " href="https://www.facebook.com/"><img class="footer__links_facebook" src="./images/facebook.svg" alt=""></a>
+        <a class="link footer__links_main" href="./index.html" target="_blank">Главная</a>
+        <a class="link footer__links_yandex" href="https://praktikum.yandex.ru/" target="_blank">Яндекс.Практикум</a>
+        <a class="link " href="https://github.com/juzlov/" target="_blank"><img class="footer__links_github" src="./images/github.svg" alt="github logo"></a>
+        <a class="link " href="https://www.facebook.com/" target="_blank"><img class="footer__links_facebook" src="./images/facebook.svg" alt="facebook logo"></a>
       </div>
     </footer>
   </div>
