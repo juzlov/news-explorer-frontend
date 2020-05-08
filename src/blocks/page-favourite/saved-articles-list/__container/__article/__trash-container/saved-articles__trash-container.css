@@ -1,0 +1,33 @@
+@import url(./__trash-button/saved-articles__trash-button.css);
+@import url(./__trash-icon/saved-articles__trash-icon.css);
+
+.saved-articles__trash-container {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles__trash-container {
+    top: 16px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles__trash-container {
+    top: 16px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+  }
+}

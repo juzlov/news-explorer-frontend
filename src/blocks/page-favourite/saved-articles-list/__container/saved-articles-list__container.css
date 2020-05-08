@@ -1,0 +1,33 @@
+@import url(./__article/saved-articles__article.css);
+
+.saved-articles-list__container {
+  width: 90%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-gap: 16px 16px;
+  margin: 0;
+}
+
+@media (max-width: 425px) {
+  .saved-articles-list__container {
+    max-width: 425px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles-list__container {
+    max-width: 768px;
+    grid-template-columns: repeat(auto-fill, 224px);
+    grid-gap: 8px 8px;
+    justify-content: unset;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles-list__container  {
+    max-width: 1024px;
+  }
+}

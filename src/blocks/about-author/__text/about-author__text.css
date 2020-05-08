@@ -1,0 +1,13 @@
+@import url(./__main-text/about-author__main-text.css);
+@import url(./__main-title/about-author__main-title.css);
+
+.about-author__text {
+  width: 50%;
+  margin-top: -10%;
+}
+
+@media (max-width: 425px) {
+  .about-author__text {
+    width: 90%;
+  }
+}

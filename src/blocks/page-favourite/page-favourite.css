@@ -1,0 +1,42 @@
+@import url(./header-favourite/header-favourite.css);
+@import url(./saved-articles/saved-articles.css);
+@import url(./saved-articles-list/saved-articles-list.css);
+
+.page-favourite {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0 auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  background-color: #FFFFFF;
+  color: #1A1B22;
+}
+
+@media (max-width: 425px) {
+  .page-favourite {
+      width: 100%;
+      max-width: 425px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .page-favourite {
+      width: 100%;
+      max-width: 768px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-favourite {
+      width: 100%;
+      max-width: 1024px;
+  }
+}

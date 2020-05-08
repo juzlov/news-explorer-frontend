@@ -1,0 +1,20 @@
+@import url(./_active/header__navigation-list_item_active.css);
+@import url(./__links_white/header__links_white.css);
+@import url(./__links_black/header__links_black.css);
+
+.header__navigation-list_item {
+  font-family: Roboto;
+  list-style-type: none;
+  margin-right: 34px;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header__navigation-list_item {
+    margin-right: 1em;
+    display: block;
+    max-height: 100%;
+  }
+}
+
+
+

@@ -1,0 +1,11 @@
+@import url(./__button/popup__button.css);
+@import url(./__email/popup__email.css);
+@import url(./__input/popup__input.css);
+@import url(./__name/popup__name.css);
+@import url(./__pass/popup__pass.css);
+@import url(./error-message/error-message.css);
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+}

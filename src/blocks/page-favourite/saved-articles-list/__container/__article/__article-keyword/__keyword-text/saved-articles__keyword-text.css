@@ -1,0 +1,25 @@
+.saved-articles__keyword-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #000000;
+  background-color: #FFFFFF;
+  margin: 0.6em;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .saved-articles__article-keyword {
+    font-size: 0.8em;
+    line-height: 1em;
+    margin: 0.3em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .saved-articles__trash-container {
+    line-height: 1em;
+    margin: 0.3em;
+  }
+}

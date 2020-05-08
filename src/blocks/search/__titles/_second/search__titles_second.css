@@ -1,0 +1,14 @@
+.search__titles_second {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  font-size: 1.3em;
+}
+
+@media (max-width: 425px) {
+  .search__titles_second {
+    font-size: 0.9em;
+  }
+}
+

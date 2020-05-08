@@ -1,0 +1,13 @@
+@import url(./__trash-container/saved-articles__trash-container.css);
+@import url(./__article-keyword/saved-articles__article-keyword.css);
+
+.saved-articles__article{
+  max-width: 400px;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+

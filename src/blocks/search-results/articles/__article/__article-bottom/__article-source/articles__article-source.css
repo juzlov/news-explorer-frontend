@@ -1,0 +1,11 @@
+.articles__article-source {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #B6BCBF;
+  margin: 5% 0;
+}

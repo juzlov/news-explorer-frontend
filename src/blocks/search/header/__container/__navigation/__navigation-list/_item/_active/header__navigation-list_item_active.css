@@ -1,0 +1,10 @@
+.header__navigation-list_item_active {
+  border-bottom: solid 3px  ;
+  line-height: 4.9em;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header__navigation-list_item_active {
+    width: 30%;
+  }
+}

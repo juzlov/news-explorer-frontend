@@ -1,0 +1,13 @@
+.header__mini-menu {
+  background: none;
+  border: none;
+  opacity: 0;
+}
+
+@media (max-width: 425px) {
+  .header__mini-menu {
+    background: none;
+    border: none;
+    opacity: 100;
+  }
+}

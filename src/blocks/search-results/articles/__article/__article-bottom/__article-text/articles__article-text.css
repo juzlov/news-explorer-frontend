@@ -1,0 +1,21 @@
+.articles__article-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.3em;
+  color: #1A1B22;
+  margin: 5% 0 0 0;
+}
+
+@media (max-width: 425px) {
+  .articles__article-text {
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .articles__article-text {
+    font-size: 0.9em;
+  }
+}

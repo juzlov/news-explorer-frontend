@@ -1,0 +1,9 @@
+@import url(./__article-fav-button/articles__article-fav-button.css);
+@import url(./__article-fav-container/articles__article-fav-container.css);
+@import url(./__article-image/articles__article-image.css);
+
+.articles__article-topside{
+  position: relative;
+  margin: 0;
+  width: 100%;
+}

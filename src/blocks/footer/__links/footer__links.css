@@ -1,0 +1,30 @@
+@import url(./_facebook/footer_links_facebook.css);
+@import url(./_github/footer_links_github.css);
+@import url(./_main/footer_links_main.css);
+@import url(./_yandex/footer_links_yandex.css);
+
+.footer__links {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .footer__links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .footer__links {
+    width: 70%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer__links {
+    width: 40%;
+  }
+}

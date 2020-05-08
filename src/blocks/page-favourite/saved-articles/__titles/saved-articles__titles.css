@@ -1,0 +1,6 @@
+@import url(./__title/saved-articles__title.css);
+@import url(./__counter/saved-articles__counter.css);
+
+.saved-articles__titles {
+  width: 90%;
+}
