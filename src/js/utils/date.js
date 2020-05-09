@@ -1,0 +1,1 @@
+export function date(event) {console.log(event.date)};

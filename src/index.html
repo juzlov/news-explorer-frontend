@@ -166,9 +166,10 @@
 
 
     <div class="popup popup-login disabled">
-      <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-login__close">
+
 
       <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-login__close">
 
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="login">
@@ -180,14 +181,15 @@
             <span id="error-login-password" class="error-message error-message_hidden">Неверный логин или пароль</span>
             <button class="button link popup__button popup-login__button" disabled>Войти</button>
         </form>
-        <p class="popup__text">или<a class="popup__link " href=""> Зарегистрироваться</a></p>
+        <p class="popup__text">или<a class="popup__link popup__link_register" href=""> Зарегистрироваться</a></p>
       </div>
 
     </div>
 
     <div class="popup popup-signup disabled">
-      <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-signup__close">
+
       <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-signup__close">
 
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup">
@@ -203,16 +205,16 @@
             <span id="error-server" class="error-message error-message__hidden">Такой пользователь уже есть</span>
             <button class="button link popup__button popup__button_disabled popup-signup__button" disabled>Зарегистрироваться</button>
         </form>
-        <p class="popup__text">или<a class="popup__link link" href=""> Войти</a></p>
+        <p class="popup__text">или<a class="popup__link link popup__link_login" href=""> Войти</a></p>
       </div>
     </div>
 
     <div class="popup popup-signup-success disabled">
-      <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-signup__close">
-      <div class="popup__content">
 
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-signup__close">
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-        <a class="popup__link link" href="">Выполнить вход</a>
+        <a class="popup__link link popup__link_login" href="">Выполнить вход</a>
       </div>
     </div>
 

@@ -19,9 +19,12 @@ body {
 }
 
 .disabled {
-  display: none;
+
 }
 
+.popup_is-opened {
+  display: flex;
+}
 
 
 
