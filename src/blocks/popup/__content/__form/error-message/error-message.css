@@ -8,8 +8,16 @@
   color: #FF0000;
 }
 
+.error-message_hidden {
+  display: none;
+}
+
 
 #error-login-password {
+  margin: 2% 0 5% 0;
+}
+
+#error-login {
   text-align: center;
   margin: 5% 0 2% 0;
 }
