@@ -1,7 +1,7 @@
 // Отвечает за взаимодействие с написанным мной Node.js API
 
 export default class MainApi {
-  constructor(email, password, name, keyword, title, text, date, source, link, image, owner){
+  constructor(headers, email, password, name, keyword, title, text, date, source, link, image, owner){
     this.email = email;
     this.password = password;
     this.name = name;
@@ -13,11 +13,27 @@ export default class MainApi {
     this.link = link;
     this.image = image;
     this.owner = owner;
+    this.headers = headers;
   }
 
   // регистрирует нового пользователя
-  signup(){
-
+  signup(email, password, name){
+    return fetch(('http://localhost:3000/signup'), {
+      method: 'POST',
+      body: JSON.stringify(
+          {
+              "email": `${email}`,
+              "password": `${password}`,
+              "name": `${name}`
+          })
+    })
+    .then(res => res.json())
+      .then((result) => {
+          if (callback) {
+              callback(result);
+          }
+      })
+      .catch(err => console.log(err));
   }
 
   // аутентифицирует пользователя на основе почты и пароля

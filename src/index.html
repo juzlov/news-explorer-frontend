@@ -20,14 +20,15 @@
 
         <div class="header__container">
           <a class="link" href="./index.html" target="_blank"><img class="header__logo" src="<%=require('./images/NewsExplorer.svg').default%>" alt="NewsExplorer logo"></a>
-          <button class="header__mini-menu"><img class="header__menu-logo" src="<%=require('./images/menu.svg').default%>" alt="mini menu button"></button>
+          <button class="header__mini-menu"></button>
           <nav class="header__navigation">
             <ul class="header__navigation-list">
               <li class="header__navigation-list_item header__navigation-list_item_active"><a class="link header__links_white" href="./index.html" target="_blank">Главная</a></li>
-              <li class="header__navigation-list_item"><a href="./Saved_News_Logged_In.html" class="link header__links_white" target="_blank">Сохранённые статьи</a></li>
+              <li class="header__navigation-list_item disabled"><a href="./Saved_News_Logged_In.html" class="link header__links_white" target="_blank">Сохранённые статьи</a></li>
             </ul>
 
-            <button class="button link header__button username">Грета<img class="icon" src="<%=require('./images/logout.svg').default%>" alt="logout"></button>
+            <button class="button link header__button username disabled">Грета<img class="icon" src="<%=require('./images/logout.svg').default%>" alt="logout"></button>
+            <button class="button link header__button header__button_authorize">Авторизоваться</button>
           </nav>
         </div>
 
@@ -213,9 +214,29 @@
     <div class="popup popup-signup-success">
 
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-signup__close">
+        <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-signup-success__close">
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-        <a class="popup__link link popup__link_login" href="">Выполнить вход</a>
+        <a class="popup__link link popup-signup-success__link_login" href="">Выполнить вход</a>
+      </div>
+    </div>
+
+    <div class="popup popup-mini-menu">
+
+      <div class="popup-mini-menu__content">
+
+          <a class="link" href="./index.html" target="_blank"><img class="popup-mini-menu__logo" src="<%=require('./images/NewsExplorer.svg').default%>" alt="NewsExplorer logo"></a>
+          <img src="<%=require('./images/close.svg').default%>" alt="close cross" class="popup__close link popup-mini-menu__close">
+          <nav class="popup-mini-menu__navigation">
+            <ul class="popup-mini-menu__navigation-list">
+              <li class="popup-mini-menu__navigation-list_item popup-mini-menu__navigation-list_item_active"><a class="link header__links_white" href="./index.html" target="_blank">Главная</a></li>
+              <li class="popup-mini-menu__navigation-list_item "><a href="./Saved_News_Logged_In.html" class="link header__links_white" target="_blank">Сохранённые статьи</a></li>
+            </ul>
+
+            <button class="button link popup-mini-menu__button username disabled">Грета<img class="icon" src="<%=require('./images/logout.svg').default%>" alt="logout"></button>
+            <button class="button link popup-mini-menu__button popup-mini-menu__button_authorize">Авторизоваться</button>
+          </nav>
+
+
       </div>
     </div>
 

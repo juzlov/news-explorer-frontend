@@ -23,24 +23,34 @@ const errorMessages = {
 }
 
 // константы открытия и закрытия попапа
-
-const headerButton = document.querySelector('.header__button');
+const popupMiniMenuButton = document.querySelector('.header__mini-menu');
+const popupMiniButtonAutorize = document.querySelector('.popup-mini-menu__button_authorize');
+const headerButtonAutorize = document.querySelector('.header__button_authorize');
 const popupLoginClose = document.querySelector('.popup-login');
 const registerLink = document.querySelector('.popup__link_register');
 const loginLink = document.querySelector('.popup__link_login');
+const loginSuccessLink = document.querySelector('.popup-signup-success__link_login');
 const popupSignupClose = document.querySelector('.popup-signup');
+const popupSignupSuccessClose = document.querySelector('.popup-signup-success');
+const popupMiniMenuClose = document.querySelector('.popup-mini-menu__close');
 
 const validation = new FormValidator(errorMessages);
 const popup = new Popup(validation);
 
 // слушатели открытия попапов
-headerButton.addEventListener('click', popup.open);
+popupMiniMenuButton.addEventListener('click', popup.open);
+headerButtonAutorize.addEventListener('click', popup.open);
+popupMiniButtonAutorize.addEventListener('click', popup.open);
 loginLink.addEventListener('click', popup.open);
+loginSuccessLink.addEventListener('click', popup.open);
 registerLink.addEventListener('click', popup.open);
+
 
 // слушатели закрытия попапов
 popupLoginClose.addEventListener('click', popup.close);
 popupSignupClose.addEventListener('click', popup.close);
+popupSignupSuccessClose.addEventListener('click', popup.close);
+popupMiniMenuClose.addEventListener('click', popup.close);
 
 
 // валидация полей в форме регистрации
@@ -77,14 +87,28 @@ loginPassword.addEventListener('input', function() {
 // работа кнопки логина в попапе логин
 const buttonLogin = document.querySelector('.popup-login__button');
 buttonLogin.addEventListener('click', function(event) {
-  console.log('login button pushed');
+  event.preventDefault();
+
+  const email = document.querySelector('.popup__input_type_email');
+  const password = document.querySelector('.popup__input_type_pasword');;
+
+  api.signin(email.value, password.value);
   popup.close(event);
 })
+
+
+const api = new MainApi;
 
 // работа кнопки логина в попапе signup
 const buttonSignup = document.querySelector('.popup-signup__button');
 buttonSignup.addEventListener('click', function(event) {
-  console.log('signup button pushed');
+  event.preventDefault();
+
+  const email = document.querySelector('.popup-signup__input_type_email');
+  const password = document.querySelector('.popup-signup__input_type_pasword');
+  const name = document.querySelector('.popup-signup__input_type_name');
+
+  api.signup(email.value, password.value, name.value);
   popup.close(event);
 })
 
@@ -93,4 +117,6 @@ loginButtonDisabler();
 
 // вызов функции отключения кнопки регистрация в Signup-попапе
 signupButtonDisabler();
+
+
 
