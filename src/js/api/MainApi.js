@@ -20,6 +20,9 @@ export default class MainApi {
   signup(email, password, name){
     return fetch(('http://localhost:3000/signup'), {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(
           {
               "email": `${email}`,
@@ -28,17 +31,26 @@ export default class MainApi {
           })
     })
     .then(res => res.json())
-      .then((result) => {
-          if (callback) {
-              callback(result);
-          }
-      })
-      .catch(err => console.log(err));
+    .then((result) => result)
+    .catch((err) => console.log(err));
   }
 
   // аутентифицирует пользователя на основе почты и пароля
-  signin(){
-
+  signin(email, password){
+    return fetch(('http://localhost:3000/signin'), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+          {
+              "email": `${email}`,
+              "password": `${password}`
+          })
+    })
+    .then((res) => res)
+      .then((result) => result)
+      .catch((err) => console.log(err));
   }
 
   // возвращает информацию о пользователе
