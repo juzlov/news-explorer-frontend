@@ -27,7 +27,7 @@
               <li class="header__navigation-list_item disabled"><a href="./Saved_News_Logged_In.html" class="link header__links_white" target="_blank">Сохранённые статьи</a></li>
             </ul>
 
-            <button class="button link header__button username disabled">Грета<img class="icon" src="<%=require('./images/logout.svg').default%>" alt="logout"></button>
+            <button class="button link header__button header__button_logout username disabled"><span class="header__button_name">Грета</span><img class="icon" src="<%=require('./images/logout.svg').default%>" alt="logout"></button>
             <button class="button link header__button header__button_authorize">Авторизоваться</button>
           </nav>
         </div>
@@ -46,7 +46,7 @@
 
 
 
-    <section class="search-results">
+    <section class="search-results disabled">
       <div class="search-results__loading disabled">
         <i class="search-results__circle-preloader"></i>
         <p class="search-results__loading-text">Идет поиск новостей...</p>
@@ -180,7 +180,7 @@
             <p class="popup__pass">Пароль</p>
             <input type="password" name="password" id="login-password" minlength="2" maxlength="30" required class="popup__input popup__input_type_pasword" placeholder="Введите пароль">
             <span id="error-login-password" class="error-message"></span>
-            <span id="error-login" class="error-message error-message_hidden">Неверный логин или пароль</span>
+            <span id="error-login" class="error-message"></span>
             <button class="button link popup__button popup__button_disabled popup-login__button" disabled>Войти</button>
         </form>
         <p class="popup__text">или<a class="popup__link popup__link_register" href=""> Зарегистрироваться</a></p>

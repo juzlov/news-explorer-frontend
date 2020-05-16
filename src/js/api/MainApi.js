@@ -30,9 +30,14 @@ export default class MainApi {
               "name": `${name}`
           })
     })
-    .then(res => res.json())
-    .then((result) => result)
-    .catch((err) => console.log(err));
+    .then((res) => {
+      if (!res.ok) {
+        return res.json()
+      } else {
+        return res;
+      }
+    }).then((result) => result)
+      .catch((err) => console.log(err));
   }
 
   // аутентифицирует пользователя на основе почты и пароля
@@ -48,8 +53,8 @@ export default class MainApi {
               "password": `${password}`
           })
     })
-    .then((res) => res)
-      .then((result) => result)
+    .then((res) => res.json())
+    .then((result) => result)
       .catch((err) => console.log(err));
   }
 

@@ -4,6 +4,7 @@ import NewCardList from './js/components/NewCardList.js';
 import NewsCard from './js/components/NewsCard.js';
 import Form from './js/components/Form.js';
 import MainApi from './js/api/MainApi.js';
+import Auth from './js/components/Auth.js';
 import NewsApi from './js/api/NewsApi.js';
 import {constant} from './js/constants/constants.js';
 import {date} from './js/utils/date.js';
@@ -26,6 +27,7 @@ const errorMessages = {
 const popupMiniMenuButton = document.querySelector('.header__mini-menu');
 const popupMiniButtonAutorize = document.querySelector('.popup-mini-menu__button_authorize');
 const headerButtonAutorize = document.querySelector('.header__button_authorize');
+const headerButtonLogout = document.querySelector('.header__button_logout');
 const popupLoginClose = document.querySelector('.popup-login__close');
 const registerLink = document.querySelector('.popup__link_register');
 const loginLink = document.querySelector('.popup__link_login');
@@ -39,6 +41,7 @@ const popup = new Popup(validation);
 
 // слушатели открытия попапов
 popupMiniMenuButton.addEventListener('click', popup.open);
+
 headerButtonAutorize.addEventListener('click', popup.open);
 popupMiniButtonAutorize.addEventListener('click', popup.open);
 loginLink.addEventListener('click', popup.open);
@@ -84,6 +87,25 @@ loginPassword.addEventListener('input', function() {
   popup.validateLoginPassword(validation);
 });
 
+
+
+
+const auth = new Auth();
+const header = new Header();
+
+headerButtonLogout.addEventListener('click', () => {
+  auth.logout();
+  header.unauthorized()
+});
+
+if (auth.loginCheck()) {
+  header.loggedIn(localStorage.getItem('name'));
+} else {
+  header.unauthorized();
+}
+
+
+
 // работа кнопки логина в попапе логин
 const buttonLogin = document.querySelector('.popup-login__button');
 buttonLogin.addEventListener('click', function(event) {
@@ -95,12 +117,14 @@ buttonLogin.addEventListener('click', function(event) {
 
   api.signin(email.value, password.value)
   .then((result) => {
-    if (result.ok) {
-      console.log('Login ok');
+    if (!result) {
+      errorServer.textContent = ("No response from server");
+    } else if (result.token) {
+      auth.signin(result.token, result.name);
+      header.loggedIn(localStorage.getItem('name'));
       popup.close(event);
     } else {
-      errorServer.textContent = (data.message);
-      console.log(data.message);
+      errorServer.textContent = (result.message);
     }
   });
 })
@@ -119,13 +143,13 @@ buttonSignup.addEventListener('click', function(event) {
   const errorServer = document.querySelector('#error-server');
 
   api.signup(email.value, password.value, name.value)
-  .then((data) => {
-    if (!data.message) {
-      console.log(data);
+  .then((result) => {
+    if (!result) {
+      errorServer.textContent = ("No response from server");
+    } else if (result.ok) {
       popup.close(event);
     } else {
-      errorServer.textContent = (data.message);
-      console.log(data.message);
+      errorServer.textContent = (result.message);
     }
   });
 })
