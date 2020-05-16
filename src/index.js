@@ -160,5 +160,30 @@ loginButtonDisabler();
 // вызов функции отключения кнопки регистрация в Signup-попапе
 signupButtonDisabler();
 
+const options = {
+  "url": 'https://newsapi.org/v2/everything?',
+  "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7'
+};
 
+const newsApi = new NewsApi(options);
+const newscard = new NewsCard();
+
+const articles = document.querySelector('.articles');
+const newsCardList = new NewCardList(articles, newscard);
+
+const searchButton = document.querySelector('.search__button');
+
+searchButton.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const searchInput = document.querySelector('.search__input');
+
+  if (!searchInput.value) {
+    console.log('Please, type any keyword for searching');
+  } else {
+    newsApi.getNews(searchInput.value, '2020-05-09')
+    .then((res) => newsCardList.renderResults(res))
+    .catch((err) => console.log(err));
+  }
+})
 

@@ -1,13 +1,17 @@
 // Класс списка карточек новостей
 
 export default class NewsCardList {
-  constructor(cardList){
+  constructor(cardList, newscard){
     this.cardList = cardList;
+    this.newscard = newscard;
   }
 
   // принимает массив экземпляров карточек и отрисовывает их
-  renderResults() {
-
+  renderResults(res) {
+    console.log(res);
+    res.forEach(element => {
+      this.newscard.create(element);
+    });
   }
 
   // отвечает за отрисовку лоудера
@@ -26,7 +30,15 @@ export default class NewsCardList {
   }
 
   // принимает экземпляр карточки и добавляет её в список
-  addCard() {
+  addCard(element) {
+    /*this.card.text = element.description;
+    this.card.date = element.publishedAt;
+    this.card.source = element.source.name;
+    this.card.title = element.title;
+    this.card.link = element.url;
+    this.card.image = element.urlToImage;
+    this.card.keyword = element.keyword;
 
+    this.newscard.create(this.card);*/
   }
 }
