@@ -46,7 +46,9 @@
 
 
 
-    <section class="search-results">
+    <section class="search-results disabled">
+      <h2 class="search-results__header">Результаты поиска</h2>
+
       <div class="search-results__loading disabled">
         <i class="search-results__circle-preloader"></i>
         <p class="search-results__loading-text">Идет поиск новостей...</p>
@@ -58,12 +60,12 @@
         <p class="search-results__no-results-text">К сожалению по вашему запросу ничего не найдено.</p>
       </div>
 
-      <h2 class="search-results__header">Результаты поиска</h2>
 
-      <div class="articles">
+
+      <div class="articles disabled">
 
         <div class="articles__article">
-          <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank">
+          <a class="link articles__article-link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank">
 
             <div class="articles__article-topside">
               <img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="image of event">
@@ -99,61 +101,10 @@
 
         </div>
 
-        <div class="articles__article">
 
-          <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="image of event"></a>
-            <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
-            </div>
-          </div>
 
-          <div class="articles__article-bottom">
-            <p class="articles__article-date">2 августа, 2019</p>
-            <p class="articles__article-title">Национальное достояние – парки</p>
-            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
-          </div>
-
-        </div>
-
-        <div class="articles__article">
-
-          <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="image of event"></a>
-            <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
-            </div>
-          </div>
-
-          <div class="articles__article-bottom">
-            <p class="articles__article-date">2 августа, 2019</p>
-            <p class="articles__article-title">Национальное достояние – парки</p>
-            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
-          </div>
-
-        </div>
-
-        <div class="articles__article">
-
-          <div class="articles__article-topside">
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><img class="articles__article-image" src="<%=require('./images/image_08.png').default%>" alt="image of event"></a>
-            <div class="articles__article-fav-container">
-              <button class="articles__article-fav-button articles__article-fav-icon link"></button>
-            </div>
-          </div>
-
-          <div class="articles__article-bottom">
-            <p class="articles__article-date">2 августа, 2019</p>
-            <p class="articles__article-title">Национальное достояние – парки</p>
-            <p class="articles__article-text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <a class="link" href="https://www.liveinternet.ru/users/repman/post401242648/" target="_blank"><p class="articles__article-source">Лента.ру</p></a>
-          </div>
-
-        </div>
       </div>
-      <button class="button link search-results__button">Показать еще</button>
+      <button class="button link search-results__button disabled">Показать еще</button>
     </section>
 
     <section class="about-author">

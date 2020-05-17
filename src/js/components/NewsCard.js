@@ -42,7 +42,7 @@ export default class NewsCard {
     articleDate.classList.add('articles__article-date');
     articleSource.classList.add('articles__article-source');
     articleTitle.classList.add('articles__article-title');
-    articleLink.classList.add('link');
+    articleLink.classList.add('link', 'articles__article-link');
     articleImage.classList.add('articles__article-image');
     articleKeyword.classList.add('saved-articles__keyword-text');
     articleTopside.classList.add('articles__article-topside');
@@ -55,7 +55,7 @@ export default class NewsCard {
     articleText.textContent = this.text;
     articleDate.textContent = this.date;
     articleSource.textContent = this.source;
-    articleTitle.textContent = this.articleTitle;
+    articleTitle.textContent = this.title;
     articleLink.href = this.link;
 
     articleTopside.appendChild(articleImage);
@@ -79,6 +79,5 @@ export default class NewsCard {
 
     /*this.setEventListener();*/
 
-    console.log(this.article);
   }
 }

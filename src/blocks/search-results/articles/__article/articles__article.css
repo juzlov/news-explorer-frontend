@@ -4,6 +4,8 @@
 
 .articles__article{
   max-width: 400px;
+  max-height: 576px;
+  width: 100%;
   border-radius: 16px;
   background-color: #FFFFFF;
   display: flex;

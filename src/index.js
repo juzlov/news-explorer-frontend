@@ -177,12 +177,43 @@ searchButton.addEventListener('click', function(event) {
   event.preventDefault();
 
   const searchInput = document.querySelector('.search__input');
+  const searchContainer = document.querySelector('.search-results');
+  const searchLoader = document.querySelector('.search-results__loading');
+  const searchNoResult = document.querySelector('.search-results__no-results');
+  const searchResultButton = document.querySelector('.search-results__button');
+  const searchArticles = document.querySelector('.articles');
 
   if (!searchInput.value) {
     console.log('Please, type any keyword for searching');
   } else {
+    searchContainer.classList.remove('disabled');
+    searchLoader.classList.remove('disabled');
+    searchArticles.textContent = '';
+    searchResultButton.classList.add('disabled');
+    searchNoResult.classList.add('disabled');
+
     newsApi.getNews(searchInput.value, '2020-05-09')
-    .then((res) => newsCardList.renderResults(res))
+
+    .then((res) => {
+      console.log(res.length);
+      if (res.length === 0){
+        searchLoader.classList.add('disabled');
+        searchNoResult.classList.remove('disabled');
+      }
+      else if (res) {
+        newsCardList.renderResults(res)
+        searchLoader.classList.add('disabled');
+        searchNoResult.classList.add('disabled');
+        searchArticles.classList.remove('disabled');
+        searchResultButton.classList.remove('disabled');
+
+        searchResultButton.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          newsCardList.renderResults(res);
+        })
+      }
+    })
     .catch((err) => console.log(err));
   }
 })

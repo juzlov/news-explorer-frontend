@@ -8,10 +8,24 @@ export default class NewsCardList {
 
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(res) {
-    console.log(res);
-    res.forEach(element => {
-      this.newscard.create(element);
-    });
+    const articles = res;
+
+    const numberOfArticles = document.querySelectorAll('.articles__article');
+
+    if (numberOfArticles.length === 0) {
+      for (let i = 0; i <= 2; i++) {
+        this.newscard.create(articles[i]);
+      }
+    }
+    else if (numberOfArticles.length < articles.length) {
+      for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
+        this.newscard.create(articles[i]);
+      }
+    }
+    else if (numberOfArticles.length === articles.length) {
+      const searchResultButton = document.querySelector('.search-results__button');
+      searchResultButton.classList.add('disabled');
+    }
   }
 
   // отвечает за отрисовку лоудера
@@ -30,15 +44,7 @@ export default class NewsCardList {
   }
 
   // принимает экземпляр карточки и добавляет её в список
-  addCard(element) {
-    /*this.card.text = element.description;
-    this.card.date = element.publishedAt;
-    this.card.source = element.source.name;
-    this.card.title = element.title;
-    this.card.link = element.url;
-    this.card.image = element.urlToImage;
-    this.card.keyword = element.keyword;
+  addCard() {
 
-    this.newscard.create(this.card);*/
   }
 }

@@ -2,10 +2,13 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 1em;
-  line-height: 1.3em;
+  font-size: 0.9em;
+  line-height: 1.1em;
   color: #1A1B22;
-  margin: 5% 0 0 0;
+  margin: 2% 0 0 0;
+  word-wrap: break-word;
+  max-height: 110px;
+  overflow-y: hidden;
 }
 
 @media (max-width: 425px) {
