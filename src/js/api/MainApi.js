@@ -74,7 +74,45 @@ export default class MainApi {
   }
 
   // удаляет статью
-  removeArticle() {
+  removeArticle(id) {
+    return fetch(('http://localhost:3000/articles/' + id), {
+      method: 'DELETE',
+      headers: {
+        credentials: 'include',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        {
+            "_id": `${localStorage.getItem('_id')}`
+        })
+    })
+    .then((res) => res.json())
+    .then((result) => result)
+      .catch((err) => console.log(err));
+  }
 
+  // добавляет статью в избранное
+  faveArticle(keyword, title, text, date, source, link, image) {
+    return fetch(('http://localhost:3000/articles'), {
+      method: 'POST',
+      headers: {
+        credentials: 'include',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+          {
+              "keyword": `${keyword}`,
+              "title": `${title}`,
+              "text": `${text}`,
+              "date": `${date}`,
+              "source": `${source}`,
+              "link": `${link}`,
+              "image": `${image}`,
+              "_id": `${localStorage.getItem('_id')}`
+          })
+    })
+    .then((res) => res.json())
+    .then((result) => result)
+      .catch((err) => console.log(err));
   }
 }

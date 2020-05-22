@@ -51,6 +51,20 @@ body {
   width: 100%;
 }
 
+.articles__login-message {
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 70px;
+  background: #FFFFFF;
+  border-radius: 10px;
+
+  height: 40px;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 0.7em;
+}
+
 
 @media (max-width: 425px) {
 

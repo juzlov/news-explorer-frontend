@@ -1,6 +1,10 @@
 // Класс карточки новости
 
 export default class NewsCard {
+
+  constructor(api) {
+    this.api = api;
+  }
   // отвечает за отрисовку иконки карточки
   renderIcon() {
     // иконка незалогиненного пользователя
@@ -11,6 +15,68 @@ export default class NewsCard {
 
   }
 
+  setEventListener() {
+    const article = this.article;
+    const date = this.date;
+    const image = this.image;
+    const keyword = this.keyword;
+    const link = this.link;
+    const source = this.source;
+    const text = this.text;
+    const title = this.title;
+
+    this.favMessageListener(article);
+    // добавить проверку на авторизацию
+    this.favButtonListener(article, keyword, title, text, date, source, link, image);
+  }
+
+  favMessageListener(article) {
+    const loginMessage = article.querySelector('.articles__login-message');
+    const favButton = article.querySelector('.articles__article-fav-container');
+
+    favButton.addEventListener('mouseover', function(event) {
+      loginMessage.classList.remove('disabled');
+    })
+  }
+
+  favButtonListener(article, keyword, title, text, date, source, link, image) {
+    const favButton = article.querySelector('.articles__article-fav-container');
+
+    const api = this.api;
+
+    favButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      const favIcon = article.querySelector('.articles__article-fav-button');
+
+      if (!event.target.classList.contains('articles__article-fav-icon_liked')) {
+        api.faveArticle(keyword, title, text, date, source, link, image)
+        .then((result) => {
+          if (result) {
+            article.setAttribute('id', result.data._id);
+            favIcon.classList.remove('articles__article-fav-icon');
+            favIcon.classList.add('articles__article-fav-icon_liked');
+          }
+        })
+      } else {
+        api.removeArticle(article.id)
+        .then((result) => {
+          if (result) {
+            favIcon.classList.remove('articles__article-fav-icon_liked');
+            favIcon.classList.add('articles__article-fav-icon');
+          } else {
+            console.log('dont get res from server')
+          }
+        })
+      }
+
+
+    })
+  }
+
+
+
+
+
   create(card) {
 
     this.text = card.description;
@@ -19,7 +85,7 @@ export default class NewsCard {
     this.title = card.title;
     this.link = card.url;
     this.image = card.urlToImage;
-    this.keyword = card.keyword;
+    this.keyword = document.querySelector('#keyword').value;
 
     let articles = document.querySelector('.articles');
 
@@ -35,6 +101,7 @@ export default class NewsCard {
     let articleBottom = document.createElement('div');
     let articleFavContainer = document.createElement('div');
     let articleFavButton = document.createElement('button');
+    let loginMessage = document.createElement('button');
 
     this.article.classList.add('articles__article');
 
@@ -49,6 +116,7 @@ export default class NewsCard {
     articleBottom.classList.add('articles__article-bottom');
     articleFavContainer.classList.add('articles__article-fav-container');
     articleFavButton.classList.add('articles__article-fav-button', 'articles__article-fav-icon', 'link');
+    loginMessage.classList.add('articles__login-message', 'disabled', 'link');
 
 
     articleImage.src = this.image;
@@ -57,8 +125,10 @@ export default class NewsCard {
     articleSource.textContent = this.source;
     articleTitle.textContent = this.title;
     articleLink.href = this.link;
+    loginMessage.textContent = 'Войдите, чтобы сохранять статьи';
 
     articleTopside.appendChild(articleImage);
+    articleTopside.appendChild(loginMessage);
     articleTopside.appendChild(articleFavContainer);
     articleFavContainer.appendChild(articleFavButton);
 
@@ -77,7 +147,7 @@ export default class NewsCard {
     articles.appendChild(this.article);
 
 
-    /*this.setEventListener();*/
+    this.setEventListener();
 
   }
 }

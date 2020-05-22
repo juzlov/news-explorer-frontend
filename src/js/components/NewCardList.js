@@ -8,7 +8,8 @@ export default class NewsCardList {
 
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(res) {
-    const articles = res;
+    let articles = [];
+    articles = res;
 
     const numberOfArticles = document.querySelectorAll('.articles__article');
 

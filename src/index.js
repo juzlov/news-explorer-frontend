@@ -104,7 +104,7 @@ if (auth.loginCheck()) {
   header.unauthorized();
 }
 
-
+const api = new MainApi();
 
 // работа кнопки логина в попапе логин
 const buttonLogin = document.querySelector('.popup-login__button');
@@ -120,7 +120,7 @@ buttonLogin.addEventListener('click', function(event) {
     if (!result) {
       errorServer.textContent = ("No response from server");
     } else if (result.token) {
-      auth.signin(result.token, result.name);
+      auth.signin(result.token, result.name, result._id);
       header.loggedIn(localStorage.getItem('name'));
       popup.close(event);
     } else {
@@ -130,7 +130,7 @@ buttonLogin.addEventListener('click', function(event) {
 })
 
 
-const api = new MainApi;
+
 
 // работа кнопки логина в попапе signup
 const buttonSignup = document.querySelector('.popup-signup__button');
@@ -161,12 +161,12 @@ loginButtonDisabler();
 signupButtonDisabler();
 
 const options = {
-  "url": 'https://newsapi.org/v2/everything?',
+  "url": 'https://praktikum.tk/news/v2/everything?',
   "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7'
 };
 
 const newsApi = new NewsApi(options);
-const newscard = new NewsCard();
+const newscard = new NewsCard(api);
 
 const articles = document.querySelector('.articles');
 const newsCardList = new NewCardList(articles, newscard);
@@ -195,7 +195,6 @@ searchButton.addEventListener('click', function(event) {
     newsApi.getNews(searchInput.value, '2020-05-09')
 
     .then((res) => {
-      console.log(res.length);
       if (res.length === 0){
         searchLoader.classList.add('disabled');
         searchNoResult.classList.remove('disabled');
@@ -217,4 +216,12 @@ searchButton.addEventListener('click', function(event) {
     .catch((err) => console.log(err));
   }
 })
+
+/* const favButton = document.querySelectorAll('.articles__article-fav-container');
+
+const loginMessage = document.querySelector('.articles__login-message');
+
+favButton[0].addEventListener('mouseover', function(event) {
+  loginMessage.classList.remove('disabled');
+}) */
 
