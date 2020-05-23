@@ -65,7 +65,16 @@ export default class MainApi {
 
   // забирает все статьи
   getArticles() {
-
+    return fetch(('http://localhost:3000/articles/'), {
+      method: 'GET',
+      headers: {
+        credentials: 'include',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then((res) => res.json())
+    .then((result) => result)
+      .catch((err) => console.log(err));
   }
 
   // создаёт статью

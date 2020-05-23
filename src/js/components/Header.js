@@ -10,9 +10,14 @@ export default class Header {
 
   loggedIn(name) {
     this.buttonName.textContent = name;
-    this.button[0].classList.remove('disabled');
-    this.button[1].classList.add('disabled');
-    this.savedArticles[1].classList.remove('disabled');
+
+    if (!document.querySelector('.page-favourite')){
+      this.button[0].classList.remove('disabled');
+      this.button[1].classList.add('disabled');
+      this.savedArticles[1].classList.remove('disabled');
+    } else {
+      document.querySelector('.name').textContent = name;
+    }
   }
 
   unauthorized() {
