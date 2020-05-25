@@ -94,7 +94,8 @@ const header = new Header();
 
 headerButtonLogout.addEventListener('click', () => {
   auth.logout();
-  header.unauthorized()
+  header.unauthorized();
+  window.location.replace('http://localhost:8080/');
 });
 
 if (auth.loginCheck()) {
@@ -122,6 +123,7 @@ buttonLogin.addEventListener('click', function(event) {
       auth.signin(result.token, result.name, result._id);
       header.loggedIn(localStorage.getItem('name'));
       popup.close(event);
+      window.location.replace('http://localhost:8080/');
     } else {
       errorServer.textContent = (result.message);
     }
@@ -159,6 +161,7 @@ loginButtonDisabler();
 // вызов функции отключения кнопки регистрация в Signup-попапе
 signupButtonDisabler();
 
+
 const options = {
   "url": 'https://praktikum.tk/news/v2/everything?',
   "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7'
@@ -167,7 +170,7 @@ const options = {
 
 
 const newsApi = new NewsApi(options);
-const newscard = new NewsCard(api);
+const newscard = new NewsCard(api, auth);
 
 const articles = document.querySelector('.articles');
 const newsCardList = new NewCardList(articles, newscard);
@@ -217,7 +220,12 @@ searchButton.addEventListener('click', function(event) {
         resultsArticles = result;
       }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      searchLoader.classList.add('disabled');
+      searchNoResult.classList.remove('disabled');
+      console.log(err);
+    });
+
 
   }
 })

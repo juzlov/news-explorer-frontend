@@ -2,8 +2,9 @@
 
 export default class NewsCard {
 
-  constructor(api) {
+  constructor(api, auth) {
     this.api = api;
+    this.auth = auth;
   }
   // отвечает за отрисовку иконки карточки
   renderIcon() {
@@ -16,7 +17,6 @@ export default class NewsCard {
   }
 
   setEventListener() {
-
     const article = this.article;
     const date = this.date;
     const image = this.image;
@@ -27,10 +27,13 @@ export default class NewsCard {
     const title = this.title;
 
     // добавить проверку на авторизацию
+    if (this.auth.loginCheck()) {
+      this.favButtonListener(article, keyword, title, text, date, source, link, image);
+    } else {
+      this.favMessageListener(article);
+    }
 
-    this.favButtonListener(article, keyword, title, text, date, source, link, image);
 
-    this.favMessageListener(article);
   }
 
   favMessageListener(article) {
@@ -110,6 +113,10 @@ export default class NewsCard {
       this.image = card.urlToImage;
       this.keyword = document.querySelector('#keyword').value;
 
+      if (!this.image) {
+        this.image = 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg';
+      }
+
       let articles = document.querySelector('.articles');
 
       this.article = document.createElement('div');
@@ -146,6 +153,7 @@ export default class NewsCard {
       articleSource.textContent = this.source;
       articleTitle.textContent = this.title;
       articleLink.href = this.link;
+      articleLink.target = '_blank';
       loginMessage.textContent = 'Войдите, чтобы сохранять статьи';
 
       articleTopside.appendChild(articleImage);
@@ -215,6 +223,7 @@ export default class NewsCard {
       articleSource.textContent = this.source;
       articleTitle.textContent = this.title;
       articleLink.href = this.link;
+      articleLink.target = '_blank';
       articleKeyword.textContent = this.keyword;
 
       articleTopside.appendChild(articleImage);
