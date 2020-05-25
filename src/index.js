@@ -12,7 +12,6 @@ import {loginButtonDisabler, signupButtonDisabler} from './js/utils/date.js';
 import FormValidator from './js/utils/FormValidator.js';
 import './pages/index.css';
 
-
 //ошибки валидации
 const errorMessages = {
   'signup-email': 'Это обязательное поле',
@@ -165,17 +164,19 @@ const options = {
   "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7'
 };
 
+
+
 const newsApi = new NewsApi(options);
 const newscard = new NewsCard(api);
 
 const articles = document.querySelector('.articles');
 const newsCardList = new NewCardList(articles, newscard);
 
+
 const searchButton = document.querySelector('.search__button');
 
 searchButton.addEventListener('click', function(event) {
   event.preventDefault();
-
   const searchInput = document.querySelector('.search__input');
   const searchContainer = document.querySelector('.search-results');
   const searchLoader = document.querySelector('.search-results__loading');
@@ -192,36 +193,32 @@ searchButton.addEventListener('click', function(event) {
     searchResultButton.classList.add('disabled');
     searchNoResult.classList.add('disabled');
 
-    newsApi.getNews(searchInput.value, '2020-05-09')
+
+
+    let resultsArticles = [];
+
+
+    newsApi.getNews(searchInput.value, date(7), date(0))
 
     .then((res) => {
-      if (res.length === 0){
+      let result = res;
+
+      if (result.length === 0){
         searchLoader.classList.add('disabled');
         searchNoResult.classList.remove('disabled');
       }
-      else if (res) {
-        newsCardList.renderResults(res)
+      else if (result) {
+        newsCardList.renderResults(result);
         searchLoader.classList.add('disabled');
         searchNoResult.classList.add('disabled');
         searchArticles.classList.remove('disabled');
         searchResultButton.classList.remove('disabled');
 
-        searchResultButton.addEventListener('click', function(event) {
-          event.preventDefault();
-
-          newsCardList.renderResults(res);
-        })
+        resultsArticles = result;
       }
     })
     .catch((err) => console.log(err));
+
   }
 })
-
-/* const favButton = document.querySelectorAll('.articles__article-fav-container');
-
-const loginMessage = document.querySelector('.articles__login-message');
-
-favButton[0].addEventListener('mouseover', function(event) {
-  loginMessage.classList.remove('disabled');
-}) */
 

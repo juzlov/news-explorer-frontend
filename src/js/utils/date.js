@@ -1,4 +1,14 @@
-export function date(event) {console.log(event.date)};
+export const date = (number) => {
+  const date = new Date();
+  date.setDate(date.getDate() - number);
+  return date.toISOString();
+};
+
+/* export const cardDate = (dateFromCard) => {
+  return dateFromCard.parse();
+}
+
+console.log(cardDate(date(7))); */
 
 //функция отключения кнопки Вход в логин-попапе
 export function loginButtonDisabler() {

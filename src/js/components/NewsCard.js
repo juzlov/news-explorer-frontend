@@ -99,11 +99,11 @@ export default class NewsCard {
 
   create(card) {
 
-
-
     if (!document.querySelector('.page-favourite')){
+      const date = new Date(card.publishedAt);
+
       this.text = card.description;
-      this.date = card.publishedAt;
+      this.date = date.toLocaleDateString('ru', {day: 'numeric', month: 'long', year: 'numeric' });
       this.source = card.source.name;
       this.title = card.title;
       this.link = card.url;

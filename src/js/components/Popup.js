@@ -85,6 +85,7 @@ export default class Popup {
   //закрывает попап
   close(event) {
     event.preventDefault();
+    console.log(this);
     const popupSignup = document.querySelector('.popup-signup');
     const popupLogin = document.querySelector('.popup-login');
     const popupSuccess = document.querySelector('.popup-signup-success');

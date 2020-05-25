@@ -11,6 +11,20 @@ export default class NewsCardList {
     let articles = [];
     articles = res;
 
+    const newscards = this;
+    const searchResultButton = document.querySelector('.search-results__button');
+
+
+    /* if (!searchResultButton.getAttribute('listener') === true) {
+      searchResultButton.setAttribute('listener', 'true');
+      console.log('ставим слушатель'); */
+      searchResultButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        newscards.renderMore(articles);
+      })
+    /* } */
+
+
     const numberOfArticles = document.querySelectorAll('.articles__article');
 
     if (numberOfArticles.length === 0) {
@@ -22,6 +36,34 @@ export default class NewsCardList {
       for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
         this.newscard.create(articles[i]);
       }
+
+    }
+    else if (numberOfArticles.length === articles.length) {
+      const searchResultButton = document.querySelector('.search-results__button');
+      searchResultButton.classList.add('disabled');
+    }
+
+  }
+
+  renderMore(res) {
+    let articles = [];
+    articles = res;
+
+    console.log('click');
+
+
+    const numberOfArticles = document.querySelectorAll('.articles__article');
+
+    if (numberOfArticles.length === 0) {
+      for (let i = 0; i <= 2; i++) {
+        this.newscard.create(articles[i]);
+      }
+    }
+    else if (numberOfArticles.length < articles.length) {
+      for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
+        this.newscard.create(articles[i]);
+      }
+
     }
     else if (numberOfArticles.length === articles.length) {
       const searchResultButton = document.querySelector('.search-results__button');
