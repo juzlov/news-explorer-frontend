@@ -25,6 +25,7 @@ const errorMessages = {
 // константы открытия и закрытия попапа
 const popupMiniMenuButton = document.querySelector('.header__mini-menu');
 const popupMiniButtonAutorize = document.querySelector('.popup-mini-menu__button_authorize');
+const popupMiniButton = document.querySelector('.popup-mini-menu__button');
 const headerButtonAutorize = document.querySelector('.header__button_authorize');
 const headerButtonLogout = document.querySelector('.header__button_logout');
 const popupLoginClose = document.querySelector('.popup-login__close');
@@ -93,6 +94,12 @@ const auth = new Auth();
 const header = new Header();
 
 headerButtonLogout.addEventListener('click', () => {
+  auth.logout();
+  header.unauthorized();
+  window.location.replace('http://localhost:8080/');
+});
+
+popupMiniButton.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
   window.location.replace('http://localhost:8080/');

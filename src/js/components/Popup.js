@@ -50,6 +50,8 @@ export default class Popup {
     const popupMiniMenu = document.querySelector('.popup-mini-menu');
     const popupSuccess = document.querySelector('.popup-signup-success');
 
+    console.log(event.target);
+
     if (event.target.classList.contains('popup__link_register')) {
       popupSignup.classList.toggle('popup_is-opened');
       popupLogin.classList.remove('popup_is-opened');
@@ -66,6 +68,11 @@ export default class Popup {
     }
 
     else if (event.target.classList.contains('header__mini-menu')) {
+      popupMiniMenu.classList.toggle('popup_is-opened');
+    }
+
+    else if (event.target.classList.contains('header__menu-logo')) {
+      console.log('vidit');
       popupMiniMenu.classList.toggle('popup_is-opened');
     }
 

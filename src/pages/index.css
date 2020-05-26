@@ -122,14 +122,12 @@ body {
 
 .popup-mini-menu__button {
   width: 90%;
-  display: flex;
   margin: 0 0 5% 0;
   color: #FFFFFF;
   height: 3em;
   border: 1px solid #FFFFFF;
   background: none;
   border-radius: 100px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
