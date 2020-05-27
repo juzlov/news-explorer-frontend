@@ -2,238 +2,104 @@ import Popup from './js/components/Popup.js';
 import Header from './js/components/Header.js';
 import NewCardList from './js/components/NewCardList.js';
 import NewsCard from './js/components/NewsCard.js';
-import Form from './js/components/Form.js';
 import MainApi from './js/api/MainApi.js';
 import Auth from './js/components/Auth.js';
 import NewsApi from './js/api/NewsApi.js';
-import {constant} from './js/constants/constants.js';
+import {ERROR_MESSAGES, OPTIONS, POPUP_MINI_MENU_BUTTON, POPUP_MINI_BUTTON_AUTHORIZE, POPUP_MINI_BUTTON, HEADER_BUTTON_AUTHORIZE,
+  HEADER_BUTTON_LOGOUT, POPUP_LOGIN_CLOSE, REGISTER_LINK, LOGIN_LINK, LOGIN_SUCCESS_LINK, POPUP_SIGNUP_CLOSE,
+  POPUP_SIGNUP_SUCCESS_CLOSE, POPUP_MINI_MENU_CLOSE, ARTICLES, SIGNUP_EMAIL, SIGNUP_PASSWORD, SIGNUP_NAME,
+  LOGIN_EMAIL, LOGIN_PASSWORD, BUTTON_LOGIN, SEARCH_BUTTON, BUTTON_SIGNUP} from './js/constants/constants.js';
 import {date} from './js/utils/date.js';
-import {loginButtonDisabler, signupButtonDisabler} from './js/utils/date.js';
-import FormValidator from './js/utils/FormValidator.js';
+import {loginButtonDisabler, signupButtonDisabler} from './js/utils/buttonDisablers.js';
+import FormValidator from './js/components/FormValidator.js';
 import './pages/index.css';
 
-//ошибки валидации
-const errorMessages = {
-  'signup-email': 'Это обязательное поле',
-  'name': 'Это обязательное поле',
-  'signup-password': 'Это обязательное поле',
-  'length': 'Должно быть от 2 до 30 символов',
-  'login-email': 'Это обязательное поле',
-  'login-password': 'Это обязательное поле'
-}
-
-// константы открытия и закрытия попапа
-const popupMiniMenuButton = document.querySelector('.header__mini-menu');
-const popupMiniButtonAutorize = document.querySelector('.popup-mini-menu__button_authorize');
-const popupMiniButton = document.querySelector('.popup-mini-menu__button');
-const headerButtonAutorize = document.querySelector('.header__button_authorize');
-const headerButtonLogout = document.querySelector('.header__button_logout');
-const popupLoginClose = document.querySelector('.popup-login__close');
-const registerLink = document.querySelector('.popup__link_register');
-const loginLink = document.querySelector('.popup__link_login');
-const loginSuccessLink = document.querySelector('.popup-signup-success__link_login');
-const popupSignupClose = document.querySelector('.popup-signup__close');
-const popupSignupSuccessClose = document.querySelector('.popup-signup-success');
-const popupMiniMenuClose = document.querySelector('.popup-mini-menu__close');
-
-const validation = new FormValidator(errorMessages);
-const popup = new Popup(validation);
+const api = new MainApi();
+const auth = new Auth();
+const header = new Header();
+const validation = new FormValidator(ERROR_MESSAGES);
+const popup = new Popup(validation, api, header, auth);
+const newsApi = new NewsApi(OPTIONS);
+const newscard = new NewsCard(api, auth);
+const newsCardList = new NewCardList(ARTICLES, newscard, newsApi, date);
 
 // слушатели открытия попапов
-popupMiniMenuButton.addEventListener('click', popup.open);
-
-headerButtonAutorize.addEventListener('click', popup.open);
-popupMiniButtonAutorize.addEventListener('click', popup.open);
-loginLink.addEventListener('click', popup.open);
-loginSuccessLink.addEventListener('click', popup.open);
-registerLink.addEventListener('click', popup.open);
-
+POPUP_MINI_MENU_BUTTON.addEventListener('click', popup.open);
+HEADER_BUTTON_AUTHORIZE.addEventListener('click', popup.open);
+POPUP_MINI_BUTTON_AUTHORIZE.addEventListener('click', popup.open);
+LOGIN_LINK.addEventListener('click', popup.open);
+LOGIN_SUCCESS_LINK.addEventListener('click', popup.open);
+REGISTER_LINK.addEventListener('click', popup.open);
 
 // слушатели закрытия попапов
-popupLoginClose.addEventListener('click', popup.close);
-popupSignupClose.addEventListener('click', popup.close);
-popupSignupSuccessClose.addEventListener('click', popup.close);
-popupMiniMenuClose.addEventListener('click', popup.close);
-
+POPUP_LOGIN_CLOSE.addEventListener('click', popup.close);
+POPUP_SIGNUP_CLOSE.addEventListener('click', popup.close);
+POPUP_SIGNUP_SUCCESS_CLOSE.addEventListener('click', popup.close);
+POPUP_MINI_MENU_CLOSE.addEventListener('click', popup.close);
 
 // валидация полей в форме регистрации
-
-const signupEmail = document.querySelector('#signup-email');
-const signupPassword = document.querySelector('#signup-password');
-const signupName = document.querySelector('#name');
-
-signupEmail.addEventListener('input', function() {
+SIGNUP_EMAIL.addEventListener('input', function() {
   popup.validateEmail(validation);
 });
 
-signupPassword.addEventListener('input', function() {
+SIGNUP_PASSWORD.addEventListener('input', function() {
   popup.validatePassword(validation);
 });
 
-signupName.addEventListener('input', function() {
+SIGNUP_NAME.addEventListener('input', function() {
   popup.validateName(validation);
 });
 
 // валидация полей в форме авторизации
-
-const loginEmail = document.querySelector('#login-email');
-const loginPassword = document.querySelector('#login-password');
-
-loginEmail.addEventListener('input', function() {
+LOGIN_EMAIL.addEventListener('input', function() {
   popup.validateLoginEmail(validation);
 });
 
-loginPassword.addEventListener('input', function() {
+LOGIN_PASSWORD.addEventListener('input', function() {
   popup.validateLoginPassword(validation);
 });
 
+// работа кнопки логина в попапе логин
+BUTTON_LOGIN.addEventListener('click', function(event) {
+  event.preventDefault();
+  popup.login(event);
+})
 
+// работа кнопки регистрации в попапе signup
+BUTTON_SIGNUP.addEventListener('click', function(event) {
+  event.preventDefault();
+  popup.signup(event);
+})
 
+// слушатель кнопки поиска статей
+SEARCH_BUTTON.addEventListener('click', function(event) {
+  event.preventDefault();
+  newsCardList.search();
+})
 
-const auth = new Auth();
-const header = new Header();
-
-headerButtonLogout.addEventListener('click', () => {
+// слушатель кнопки logout
+HEADER_BUTTON_LOGOUT.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
   window.location.replace('http://localhost:8080/');
 });
 
-popupMiniButton.addEventListener('click', () => {
+// слушатель кнопки logout в мини-попапе
+POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
   window.location.replace('http://localhost:8080/');
 });
 
+// проверка авторизации и смена хэдера
 if (auth.loginCheck()) {
   header.loggedIn(localStorage.getItem('name'));
 } else {
   header.unauthorized();
 }
 
-const api = new MainApi();
-
-// работа кнопки логина в попапе логин
-const buttonLogin = document.querySelector('.popup-login__button');
-buttonLogin.addEventListener('click', function(event) {
-  event.preventDefault();
-
-  const email = document.querySelector('.popup__input_type_email');
-  const password = document.querySelector('.popup__input_type_pasword');
-  const errorServer = document.querySelector('#error-login');
-
-  api.signin(email.value, password.value)
-  .then((result) => {
-    if (!result) {
-      errorServer.textContent = ("No response from server");
-    } else if (result.token) {
-      auth.signin(result.token, result.name, result._id);
-      header.loggedIn(localStorage.getItem('name'));
-      popup.close(event);
-      window.location.replace('http://localhost:8080/');
-    } else {
-      errorServer.textContent = (result.message);
-    }
-  });
-})
-
-
-
-
-// работа кнопки логина в попапе signup
-const buttonSignup = document.querySelector('.popup-signup__button');
-buttonSignup.addEventListener('click', function(event) {
-  event.preventDefault();
-
-  const email = document.querySelector('.popup-signup__input_type_email');
-  const password = document.querySelector('.popup-signup__input_type_pasword');
-  const name = document.querySelector('.popup-signup__input_type_name');
-  const errorServer = document.querySelector('#error-server');
-
-  api.signup(email.value, password.value, name.value)
-  .then((result) => {
-    if (!result) {
-      errorServer.textContent = ("No response from server");
-    } else if (result.ok) {
-      popup.close(event);
-    } else {
-      errorServer.textContent = (result.message);
-    }
-  });
-})
-
 // вызов функции отключения кнопки Вход в логин-попапе
 loginButtonDisabler();
 
 // вызов функции отключения кнопки регистрация в Signup-попапе
 signupButtonDisabler();
-
-
-const options = {
-  "url": 'https://praktikum.tk/news/v2/everything?',
-  "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7'
-};
-
-
-
-const newsApi = new NewsApi(options);
-const newscard = new NewsCard(api, auth);
-
-const articles = document.querySelector('.articles');
-const newsCardList = new NewCardList(articles, newscard);
-
-
-const searchButton = document.querySelector('.search__button');
-
-searchButton.addEventListener('click', function(event) {
-  event.preventDefault();
-  const searchInput = document.querySelector('.search__input');
-  const searchContainer = document.querySelector('.search-results');
-  const searchLoader = document.querySelector('.search-results__loading');
-  const searchNoResult = document.querySelector('.search-results__no-results');
-  const searchResultButton = document.querySelector('.search-results__button');
-  const searchArticles = document.querySelector('.articles');
-
-  if (!searchInput.value) {
-    console.log('Please, type any keyword for searching');
-  } else {
-    searchContainer.classList.remove('disabled');
-    searchLoader.classList.remove('disabled');
-    searchArticles.textContent = '';
-    searchResultButton.classList.add('disabled');
-    searchNoResult.classList.add('disabled');
-
-
-
-    let resultsArticles = [];
-
-
-    newsApi.getNews(searchInput.value, date(7), date(0))
-
-    .then((res) => {
-      let result = res;
-
-      if (result.length === 0){
-        searchLoader.classList.add('disabled');
-        searchNoResult.classList.remove('disabled');
-      }
-      else if (result) {
-        newsCardList.renderResults(result);
-        searchLoader.classList.add('disabled');
-        searchNoResult.classList.add('disabled');
-        searchArticles.classList.remove('disabled');
-        searchResultButton.classList.remove('disabled');
-
-        resultsArticles = result;
-      }
-    })
-    .catch((err) => {
-      searchLoader.classList.add('disabled');
-      searchNoResult.classList.remove('disabled');
-      console.log(err);
-    });
-
-
-  }
-})
-

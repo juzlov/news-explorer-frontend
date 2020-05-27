@@ -1,9 +1,11 @@
 // Класс списка карточек новостей
 
 export default class NewsCardList {
-  constructor(cardList, newscard){
+  constructor(cardList, newscard, newsapi, date){
     this.cardList = cardList;
     this.newscard = newscard;
+    this.newsapi = newsapi;
+    this.date = date;
   }
 
   // принимает массив экземпляров карточек и отрисовывает их
@@ -11,59 +13,36 @@ export default class NewsCardList {
     let articles = [];
     articles = res;
 
-    const newscards = this;
-    const searchResultButton = document.querySelector('.search-results__button');
+    let numberOfArticles = document.querySelectorAll('.articles__article');
+    this.searchResultButton = document.querySelector('.search-results__button');
+    let newscards = this;
 
-
-    /* if (!searchResultButton.getAttribute('listener') === true) {
-      searchResultButton.setAttribute('listener', 'true');
-      console.log('ставим слушатель'); */
-      searchResultButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        newscards.renderMore(articles);
-      })
-    /* } */
-
-
-    const numberOfArticles = document.querySelectorAll('.articles__article');
-
-    if (numberOfArticles.length === 0) {
-      for (let i = 0; i <= 2; i++) {
-        this.newscard.create(articles[i]);
-      }
+    function render() {
+      newscards.renderMore(articles);
     }
-    else if (numberOfArticles.length < articles.length) {
+
+    this.searchResultButton.addEventListener('click', render);
+
+    if (numberOfArticles.length < articles.length) {
       for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
         this.newscard.create(articles[i]);
       }
-
     }
     else if (numberOfArticles.length === articles.length) {
       const searchResultButton = document.querySelector('.search-results__button');
       searchResultButton.classList.add('disabled');
     }
-
   }
 
   renderMore(res) {
     let articles = [];
     articles = res;
+    let numberOfArticles = document.querySelectorAll('.articles__article');
 
-    console.log('click');
-
-
-    const numberOfArticles = document.querySelectorAll('.articles__article');
-
-    if (numberOfArticles.length === 0) {
-      for (let i = 0; i <= 2; i++) {
-        this.newscard.create(articles[i]);
-      }
-    }
-    else if (numberOfArticles.length < articles.length) {
+    if (numberOfArticles.length < articles.length) {
       for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
         this.newscard.create(articles[i]);
       }
-
     }
     else if (numberOfArticles.length === articles.length) {
       const searchResultButton = document.querySelector('.search-results__button');
@@ -78,29 +57,8 @@ export default class NewsCardList {
     for (let i = 0; i < articles.data.length; i++) {
       if (articles.data[i].owner === localStorage.getItem('_id')) {
         this.newscard.create(articles.data[i]);
-       /*  this.articleTitlesSet(articles.data[i]); */
       }
     }
-  }
-
-  // отвечает за отрисовку лоудера
-  renderLoader() {
-
-  }
-
-  // принимает объект ошибки и показывает ошибку в интерфейсе
-  renderError() {
-
-  }
-
-  // отвечает за функциональность кнопки «Показать ещё»
-  showMore() {
-
-  }
-
-  // принимает экземпляр карточки и добавляет её в список
-  addCard() {
-
   }
 
   articleTitlesSet(cardData) {
@@ -128,14 +86,10 @@ export default class NewsCardList {
       document.querySelector('.counter').textContent = `, у вас ${keywords.length} сохраненных статей`;
     }
 
-    var  count = {};
-    keywordsArray.forEach(function(i) { count[i] = (count[i]||0) + 1;});
-
-    const unordered = Object.entries(count).map(([key, value]) => [key, value]);
-
-
+    let counter = {};
+    keywordsArray.forEach(function(i) { counter[i] = (counter[i]||0) + 1;});
+    const unordered = Object.entries(counter).map(([key, value]) => [key, value]);
     const ordered = unordered.sort((prev, next) => next[1] - prev[1]);
-
     const specialKeywords = document.querySelectorAll('.special-keyword');
 
     specialKeywords[0].textContent = ordered[0][0];
@@ -146,6 +100,47 @@ export default class NewsCardList {
       specialKeywords[2].textContent = ' и ' + ordered[2][0];
     } else {
       specialKeywords[2].textContent = '';
+    }
+  }
+
+  search () {
+    const searchInput = document.querySelector('.search__input');
+    const searchContainer = document.querySelector('.search-results');
+    const searchLoader = document.querySelector('.search-results__loading');
+    const searchNoResult = document.querySelector('.search-results__no-results');
+    const searchResultButton = document.querySelector('.search-results__button');
+    const searchArticles = document.querySelector('.articles');
+
+    if (!searchInput.value) {
+      console.log('Please, type any keyword for searching');
+    } else {
+      searchContainer.classList.remove('disabled');
+      searchLoader.classList.remove('disabled');
+      searchArticles.textContent = '';
+      searchResultButton.classList.add('disabled');
+      searchNoResult.classList.add('disabled');
+
+      this.newsapi.getNews(searchInput.value, this.date(7), this.date(0))
+      .then((res) => {
+        let result = res;
+
+        if (result.length === 0){
+          searchLoader.classList.add('disabled');
+          searchNoResult.classList.remove('disabled');
+        }
+        else if (result) {
+          this.renderResults(result);
+          searchLoader.classList.add('disabled');
+          searchNoResult.classList.add('disabled');
+          searchArticles.classList.remove('disabled');
+          searchResultButton.classList.remove('disabled');
+        }
+      })
+      .catch((err) => {
+        searchLoader.classList.add('disabled');
+        searchNoResult.classList.remove('disabled');
+        console.log(err);
+      });
     }
   }
 }

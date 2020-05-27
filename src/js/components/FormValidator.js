@@ -1,5 +1,4 @@
 // класс валидации формы
-
 export default class FormValidator {
   constructor(words) {
     this.words = words;
@@ -10,7 +9,6 @@ export default class FormValidator {
     const errorElement = document.querySelector(`#error-${element.id}`);
 
     if (element.validity.tooShort) {
-
       element.classList.add('input-container__invalid');
       errorElement.textContent = 'Значение слишком короткое';
     }
