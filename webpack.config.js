@@ -62,7 +62,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/Saved_News_Logged_In.html',
+      template: './src/saved-articles/Saved_News_Logged_In.html',
       filename: 'Saved_News_Logged_In.html'
     }),
     new WebpackMd5Hash(),

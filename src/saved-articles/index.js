@@ -5,66 +5,42 @@ import NewCardList from '../js/components/NewCardList.js';
 import NewsCard from '../js/components/NewsCard.js';
 import MainApi from '../js/api/MainApi.js';
 import Popup from '../js/components/Popup.js';
-
-import {constant} from '../js/constants/constants.js';
+import { POPUP_MINI_MENU_BUTTON, POPUP_MINI_BUTTON, POPUP_MINI_MENU_CLOSE, HEADER_BUTTON, SAVED_ARTICLES} from '../js/constants/constants.js';
 import {date} from '../js/utils/date.js';
 
-const headerButton = document.querySelector('.header__button');
-
+const api = new MainApi();
 const auth = new Auth();
 const header = new Header();
+const popup = new Popup();
+const newscard = new NewsCard(api);
+const newsCardList = new NewCardList(SAVED_ARTICLES, newscard, header, date, api);
 
-headerButton.addEventListener('click', () => {
+
+// слушатель кнопки logout
+HEADER_BUTTON.addEventListener('click', () => {
   auth.logout();
   window.location.replace('http://localhost:8080/');
 });
 
+// проверка авторизации и смена хэдера
 if (auth.loginCheck()) {
   header.loggedIn(localStorage.getItem('name'));
 } else {
   window.location.replace('http://localhost:8080/');
 }
 
+// слушатель открытия мини-попапа
+POPUP_MINI_MENU_BUTTON.addEventListener('click', popup.open);
 
+// слушатель закрытия мини-попапа
+POPUP_MINI_MENU_CLOSE.addEventListener('click', popup.close);
 
-const api = new MainApi();
-
-const newscard = new NewsCard(api);
-
-const articles = document.querySelector('.saved-articles');
-const newsCardList = new NewCardList(articles, newscard);
-
-function getArticles() {
-  api.getArticles()
-  .then((res) => {
-    newsCardList.renderSaved(res);
-    newsCardList.articleTitlesSet();
-  })
-};
-
-getArticles();
-
-
-
-const popupMiniMenuButton = document.querySelector('.header__mini-menu');
-
-const popup = new Popup();
-popupMiniMenuButton.addEventListener('click', popup.open);
-
-const popupMiniButton = document.querySelector('.popup-mini-menu__button');
-
-popupMiniButton.addEventListener('click', () => {
+// слушатель кнопки logout в мини-попапе
+POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
   window.location.replace('http://localhost:8080/');
 });
 
-const popupMiniMenuClose = document.querySelector('.popup-mini-menu__close');
-
-popupMiniMenuClose.addEventListener('click', popup.close);
-
-/* const newsApi = new NewsApi(options);
-const newscard = new NewsCard(api);
-
-const articles = document.querySelector('.articles');
-const newsCardList = new NewCardList(articles, newscard); */
+// вызов функции загрузки первоначальных карточек
+newsCardList.getArticles();
 

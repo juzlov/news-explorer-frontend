@@ -14,6 +14,7 @@ export default class NewsApi {
       .then(function(response) {
           return response.json()
       })
-      .then((res) => res.articles);
+      .then((res) => res.articles)
+      .catch((err) => console.log(err));
   }
 }

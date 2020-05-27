@@ -4,6 +4,7 @@ export default class FormValidator {
     this.words = words;
   }
 
+  // проверка длины введенных данных
   length(element) {
     this.resetError(element);
     const errorElement = document.querySelector(`#error-${element.id}`);
@@ -19,6 +20,7 @@ export default class FormValidator {
     }
   }
 
+  // проверка соответствия формату email
   isEmail(element) {
     this.resetError(element);
     const errorElement = document.querySelector(`#error-${element.id}`);
@@ -34,6 +36,7 @@ export default class FormValidator {
     }
   }
 
+  // обнуление ошибки
   resetError(element) {
     const errorElement = document.querySelector(`#error-${element.id}`);
 

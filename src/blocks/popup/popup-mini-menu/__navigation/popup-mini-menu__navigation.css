@@ -1,0 +1,10 @@
+@media (max-width: 425px) {
+  .popup-mini-menu__navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  }
+}

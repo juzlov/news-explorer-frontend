@@ -1,0 +1,13 @@
+@media (max-width: 425px) {
+  .popup-mini-menu__button {
+    width: 90%;
+    margin: 0 0 5% 0;
+    color: #FFFFFF;
+    height: 3em;
+    border: 1px solid #FFFFFF;
+    background: none;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+}

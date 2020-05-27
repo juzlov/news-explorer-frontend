@@ -1,4 +1,4 @@
-// Отвечает за взаимодействие с написанным мной Node.js API
+// Отвечает за взаимодействие с написанным Node.js API
 
 export default class MainApi {
   constructor(headers, email, password, name, keyword, title, text, date, source, link, image, owner){
@@ -55,12 +55,7 @@ export default class MainApi {
     })
     .then((res) => res.json())
     .then((result) => result)
-      .catch((err) => console.log(err));
-  }
-
-  // возвращает информацию о пользователе
-  getUserData(){
-
+    .catch((err) => console.log(err));
   }
 
   // забирает все статьи
@@ -75,11 +70,6 @@ export default class MainApi {
     .then((res) => res.json())
     .then((result) => result)
       .catch((err) => console.log(err));
-  }
-
-  // создаёт статью
-  createArticle(){
-
   }
 
   // удаляет статью

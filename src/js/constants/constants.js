@@ -28,6 +28,8 @@ const POPUP_SIGNUP_CLOSE = document.querySelector('.popup-signup__close');
 const POPUP_SIGNUP_SUCCESS_CLOSE = document.querySelector('.popup-signup-success');
 const POPUP_MINI_MENU_CLOSE = document.querySelector('.popup-mini-menu__close');
 
+// константы секций со статьями внутри
+const SAVED_ARTICLES = document.querySelector('.saved-articles');
 const ARTICLES = document.querySelector('.articles');
 
 // константы полей в форме регистрации
@@ -39,12 +41,13 @@ const SIGNUP_NAME = document.querySelector('#name');
 const LOGIN_EMAIL = document.querySelector('#login-email');
 const LOGIN_PASSWORD = document.querySelector('#login-password');
 
+// константы кнопок
 const SEARCH_BUTTON = document.querySelector('.search__button');
 const BUTTON_SIGNUP = document.querySelector('.popup-signup__button');
 const BUTTON_LOGIN = document.querySelector('.popup-login__button');
-
+const HEADER_BUTTON = document.querySelector('.header__button');
 
 export {POPUP_MINI_MENU_BUTTON, POPUP_MINI_BUTTON_AUTHORIZE, POPUP_MINI_BUTTON, HEADER_BUTTON_AUTHORIZE,
   HEADER_BUTTON_LOGOUT, POPUP_LOGIN_CLOSE, REGISTER_LINK, LOGIN_LINK, LOGIN_SUCCESS_LINK, POPUP_SIGNUP_CLOSE,
   POPUP_SIGNUP_SUCCESS_CLOSE, POPUP_MINI_MENU_CLOSE, ARTICLES, SIGNUP_EMAIL, SIGNUP_PASSWORD, SIGNUP_NAME,
-  LOGIN_EMAIL, LOGIN_PASSWORD, BUTTON_LOGIN, SEARCH_BUTTON, BUTTON_SIGNUP};
+  LOGIN_EMAIL, LOGIN_PASSWORD, BUTTON_LOGIN, SEARCH_BUTTON, BUTTON_SIGNUP, HEADER_BUTTON, SAVED_ARTICLES};

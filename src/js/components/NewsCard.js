@@ -1,21 +1,12 @@
 // Класс карточки новости
 
 export default class NewsCard {
-
   constructor(api, auth) {
     this.api = api;
     this.auth = auth;
   }
-  // отвечает за отрисовку иконки карточки
-  renderIcon() {
-    // иконка незалогиненного пользователя
 
-    // активная иконка залогиненного
-
-    // неактивная иконка залогиненного
-
-  }
-
+  // устанавливает слушатели для вновь созданных карточек
   setEventListener() {
     const article = this.article;
     const date = this.date;
@@ -26,16 +17,14 @@ export default class NewsCard {
     const text = this.text;
     const title = this.title;
 
-    // добавить проверку на авторизацию
     if (this.auth.loginCheck()) {
       this.favButtonListener(article, keyword, title, text, date, source, link, image);
     } else {
       this.favMessageListener(article);
     }
-
-
   }
 
+  // слушатель вывода сообщения о необходимости авторизации
   favMessageListener(article) {
     const loginMessage = article.querySelector('.articles__login-message');
     const favButton = article.querySelector('.articles__article-fav-container');
@@ -45,9 +34,9 @@ export default class NewsCard {
     })
   }
 
+  // слушатель кнопки добавления статьи в избранное
   favButtonListener(article, keyword, title, text, date, source, link, image) {
     const favButton = article.querySelector('.articles__article-fav-container');
-
     const api = this.api;
 
     favButton.addEventListener('click', function(event) {
@@ -69,16 +58,14 @@ export default class NewsCard {
           if (result) {
             favIcon.classList.remove('articles__article-fav-icon_liked');
             favIcon.classList.add('articles__article-fav-icon');
-          } else {
-            console.log('dont get res from server')
           }
         })
+        .catch((err) => console.log(err));
       }
-
-
     })
   }
 
+  // слушатель кнопки удаления карточки из избранного на странице с сохраненными статьями
   trashButtonListener(article) {
     const trashButton = article.querySelector('.saved-articles__trash-container');
     const api = this.api;
@@ -90,18 +77,16 @@ export default class NewsCard {
       .then((result) => {
         if (result) {
           article.parentElement.removeChild(article);
-        } else {
-          console.log('dont get res from server')
         }
       })
+      .catch((err) => console.log(err));
     })
   }
 
-
-
-
+  // создание карточки
   create(card) {
 
+    // создание карточки для главной страницы
     if (!document.querySelector('.page-favourite')){
       const date = new Date(card.publishedAt);
 
@@ -146,7 +131,6 @@ export default class NewsCard {
       articleFavButton.classList.add('articles__article-fav-button', 'articles__article-fav-icon', 'link');
       loginMessage.classList.add('articles__login-message', 'disabled', 'link');
 
-
       articleImage.src = this.image;
       articleText.textContent = this.text;
       articleDate.textContent = this.date;
@@ -161,23 +145,20 @@ export default class NewsCard {
       articleTopside.appendChild(articleFavContainer);
       articleFavContainer.appendChild(articleFavButton);
 
-
       articleBottom.appendChild(articleDate);
       articleBottom.appendChild(articleTitle);
       articleBottom.appendChild(articleText);
       articleBottom.appendChild(articleSource);
 
-
       articleLink.appendChild(articleTopside);
       articleLink.appendChild(articleBottom);
-
 
       this.article.appendChild(articleLink);
       articles.appendChild(this.article);
 
-
       this.setEventListener();
     }
+    // создание карточки для страницы с сохраненными статьями
     else {
       this.text = card.text;
       this.date = card.date;
@@ -231,20 +212,16 @@ export default class NewsCard {
       articleTopside.appendChild(articleKeyword);
       articleTrashContainer.appendChild(articleTrashButton);
 
-
       articleBottom.appendChild(articleDate);
       articleBottom.appendChild(articleTitle);
       articleBottom.appendChild(articleText);
       articleBottom.appendChild(articleSource);
 
-
       articleLink.appendChild(articleTopside);
       articleLink.appendChild(articleBottom);
 
-
       this.article.appendChild(articleLink);
       articles.appendChild(this.article);
-
 
       this.article.setAttribute('id', this.id);
 

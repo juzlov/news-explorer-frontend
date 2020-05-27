@@ -1,11 +1,12 @@
 // Класс списка карточек новостей
 
 export default class NewsCardList {
-  constructor(cardList, newscard, newsapi, date){
+  constructor(cardList, newscard, newsapi, date, api){
     this.cardList = cardList;
     this.newscard = newscard;
     this.newsapi = newsapi;
     this.date = date;
+    this.api = api;
   }
 
   // принимает массив экземпляров карточек и отрисовывает их
@@ -17,6 +18,7 @@ export default class NewsCardList {
     this.searchResultButton = document.querySelector('.search-results__button');
     let newscards = this;
 
+    // отправляет к другому методу, отрисовывающему карточки при нажатии кнопки Показать еще
     function render() {
       newscards.renderMore(articles);
     }
@@ -34,6 +36,7 @@ export default class NewsCardList {
     }
   }
 
+  // работает при нажатии на кнопку Показать еще
   renderMore(res) {
     let articles = [];
     articles = res;
@@ -50,6 +53,7 @@ export default class NewsCardList {
     }
   }
 
+  // отрисовывает карточки для страницы с сохраненными статьями
   renderSaved(res) {
     let articles = [];
     articles = res;
@@ -61,8 +65,9 @@ export default class NewsCardList {
     }
   }
 
+  // отображает количество сохраненных статей и выводит популярные ключевые слова
   articleTitlesSet(cardData) {
-    let keywords = document.querySelectorAll('.saved-articles__keyword-text');
+    const keywords = document.querySelectorAll('.saved-articles__keyword-text');
     let keywordsArray = [];
 
     for (let i=0; i<keywords.length; i++) {
@@ -71,6 +76,7 @@ export default class NewsCardList {
 
     let lastNum = keywordsArray.length.toString().slice(-1);
 
+    // выводит разные склонения фразы в зависимости от кол-ва сохраненных статей
     if (keywordsArray.length === 0) {
       document.querySelector('.counter').textContent = `, у вас нет сохранённых статей`;
       document.querySelector('.saved-articles__keywords').textContent = 'Добавляйте статьи с главной страницы в закладки, чтобы позже их прочитать'
@@ -103,6 +109,7 @@ export default class NewsCardList {
     }
   }
 
+  // отвечает за поиск статей
   search () {
     const searchInput = document.querySelector('.search__input');
     const searchContainer = document.querySelector('.search-results');
@@ -111,8 +118,9 @@ export default class NewsCardList {
     const searchResultButton = document.querySelector('.search-results__button');
     const searchArticles = document.querySelector('.articles');
 
+    // если поле не пустое, отправляет запрос на сервер с введенным ключевым словом
     if (!searchInput.value) {
-      console.log('Please, type any keyword for searching');
+      document.querySelector('#keyword').placeholder = 'Please, type any keyword';
     } else {
       searchContainer.classList.remove('disabled');
       searchLoader.classList.remove('disabled');
@@ -142,5 +150,14 @@ export default class NewsCardList {
         console.log(err);
       });
     }
+  }
+
+  // выводит первоначальные карточки для страницы с сохраненными статьями
+  getArticles() {
+    this.api.getArticles()
+    .then((res) => {
+      this.renderSaved(res);
+      this.articleTitlesSet();
+  })
   }
 }

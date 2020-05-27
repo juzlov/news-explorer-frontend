@@ -4,12 +4,14 @@ export function loginButtonDisabler() {
   const formLogin = document.forms.login;
   const buttonLogin = formLogin.querySelector('.popup-login__button');
 
+  // добавляем слушатель для инпута формы
   formLogin.addEventListener('input', function (event) {
-    let email = document.querySelector('.popup__input_type_email');
-    let password = document.querySelector('.popup__input_type_pasword');
-    let passwordError = document.querySelector('#error-login-password');
-    let emailError = document.querySelector('#error-login-email');
+    const email = document.querySelector('.popup__input_type_email');
+    const password = document.querySelector('.popup__input_type_pasword');
+    const passwordError = document.querySelector('#error-login-password');
+    const emailError = document.querySelector('#error-login-email');
 
+    // проверяем на соблюдение условий
     if (email.value.length === 0 || password.value.length === 0) {
       buttonLogin.setAttribute('disabled', true);
       buttonLogin.classList.add('popup__button_disabled');
@@ -30,14 +32,16 @@ export function signupButtonDisabler() {
   const formSignup = document.forms.signup;
   const buttonSignup = formSignup.querySelector('.popup-signup__button');
 
+  // добавляем слушатель для инпута формы
   formSignup.addEventListener('input', function () {
-    let email = document.querySelector('.popup-signup__input_type_email');
-    let password = document.querySelector('.popup-signup__input_type_pasword');
-    let name = document.querySelector('.popup-signup__input_type_name');
-    let passwordError = document.querySelector('#error-signup-password');
-    let emailError = document.querySelector('#error-signup-email');
-    let nameError = document.querySelector('#error-name');
+    const email = document.querySelector('.popup-signup__input_type_email');
+    const password = document.querySelector('.popup-signup__input_type_pasword');
+    const name = document.querySelector('.popup-signup__input_type_name');
+    const passwordError = document.querySelector('#error-signup-password');
+    const emailError = document.querySelector('#error-signup-email');
+    const nameError = document.querySelector('#error-name');
 
+    // проверяем на соблюдение условий
     if (email.value.length === 0 || password.value.length === 0 || name.value.length === 0) {
       buttonSignup.setAttribute('disabled', true);
       buttonSignup.classList.add('popup__button_disabled');

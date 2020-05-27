@@ -11,9 +11,9 @@ export default class Header {
     this.miniSavedArticles = document.querySelectorAll('.popup-mini-menu__navigation-list_item');
   }
 
+  // выполняется в случае, если пользователь успешно авторизовался
   loggedIn(name) {
     this.buttonName.textContent = name;
-
 
     if (!document.querySelector('.page-favourite')){
       this.button[0].classList.remove('disabled');
@@ -24,12 +24,13 @@ export default class Header {
       this.miniMenuButton[0].classList.remove('disabled');
       this.miniMenuButton[1].classList.add('disabled');
       this.miniSavedArticles[1].classList.remove('disabled');
-
-    } else {
+    }
+    else {
       document.querySelector('.name').textContent = name;
     }
   }
 
+  // выполняется для неавторизованных пользователей
   unauthorized() {
     this.button[0].classList.add('disabled');
     this.button[1].classList.remove('disabled');

@@ -8,35 +8,41 @@ export default class Popup {
     this.auth = auth;
   }
 
-  // методы валидации полей
+  // валидация signup email
   validateEmail() {
     const signupEmail = document.querySelector('#signup-email');
     this.errorMessage.isEmail(signupEmail);
   }
 
+  // валидация login email
   validateLoginEmail() {
     const loginEmail = document.querySelector('#login-email');
     this.errorMessage.isEmail(loginEmail);
   }
 
+  // валидация signup password
   validatePassword() {
     const signupPassword = document.querySelector('#signup-password');
     this.errorMessage.length(signupPassword);
   }
 
+  // валидация login password
   validateLoginPassword() {
     const loginPassword = document.querySelector('#login-password');
     this.errorMessage.length(loginPassword);
   }
 
+  // валидация имени
   validateName() {
     const signupName = document.querySelector('#name');
     this.errorMessage.length(signupName);
   }
 
-  // открывает попап
+  // открывает попапов в зависимости от event target
   open(event) {
     event.preventDefault();
+
+    console.log(event.target);
     const popupSignup = document.querySelector('.popup-signup');
     const popupLogin = document.querySelector('.popup-login');
     const popupMiniMenu = document.querySelector('.popup-mini-menu');
@@ -48,6 +54,7 @@ export default class Popup {
     }
 
     else if (event.target.classList.contains('header__button')) {
+      console.log('kek');
       popupLogin.classList.toggle('popup_is-opened');
       popupSignup.classList.remove('popup_is-opened');
     }
@@ -78,7 +85,7 @@ export default class Popup {
     }
   }
 
-  // закрывает попап
+  // закрытие попапа в зависимости от event target
   close(event) {
     event.preventDefault();
     const popupSignup = document.querySelector('.popup-signup');
@@ -112,6 +119,7 @@ export default class Popup {
     }
   }
 
+  // отправка на сервер информации для корректной авторизации
   login(event) {
     const email = document.querySelector('.popup__input_type_email');
     const password = document.querySelector('.popup__input_type_pasword');
@@ -132,6 +140,7 @@ export default class Popup {
     });
   }
 
+  // отправка на сервер информации для корректной регистрации
   signup(event) {
     const email = document.querySelector('.popup-signup__input_type_email');
     const password = document.querySelector('.popup-signup__input_type_pasword');
