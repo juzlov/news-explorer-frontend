@@ -125,9 +125,11 @@ export default class Popup {
     const password = document.querySelector('.popup__input_type_pasword');
     const errorServer = document.querySelector('#error-login');
 
+    this.disableInputs();
     this.api.signin(email.value, password.value)
     .then((result) => {
       if (!result) {
+        this.enableInputs();
         errorServer.textContent = ("No response from server");
       } else if (result.token) {
         this.auth.signin(result.token, result.name, result._id);
@@ -135,6 +137,7 @@ export default class Popup {
         this.close(event);
         window.location.replace('http://localhost:8080/');
       } else {
+        this.enableInputs();
         errorServer.textContent = (result.message);
       }
     });
@@ -147,15 +150,34 @@ export default class Popup {
     const name = document.querySelector('.popup-signup__input_type_name');
     const errorServer = document.querySelector('#error-server');
 
+    this.disableInputs();
     this.api.signup(email.value, password.value, name.value)
     .then((result) => {
       if (!result) {
+        this.enableInputs();
         errorServer.textContent = ("No response from server");
       } else if (result.ok) {
         this.close(event);
       } else {
+        this.enableInputs();
         errorServer.textContent = (result.message);
       }
     });
+  }
+
+  // отключает ввод в инпут во время отправки запроса на сервер
+  disableInputs() {
+    const inputs = document.querySelectorAll('.popup__input');
+    for (let i=0; i<inputs.length; i++) {
+      inputs[i].setAttribute('disabled', true);
+    }
+  }
+
+  // включает ввод в инпут
+  enableInputs() {
+    const inputs = document.querySelectorAll('.popup__input');
+    for (let i=0; i<inputs.length; i++) {
+      inputs[i].removeAttribute('disabled', true);
+    }
   }
 }
