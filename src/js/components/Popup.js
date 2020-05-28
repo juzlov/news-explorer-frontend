@@ -42,7 +42,6 @@ export default class Popup {
   open(event) {
     event.preventDefault();
 
-    console.log(event.target);
     const popupSignup = document.querySelector('.popup-signup');
     const popupLogin = document.querySelector('.popup-login');
     const popupMiniMenu = document.querySelector('.popup-mini-menu');
@@ -54,7 +53,6 @@ export default class Popup {
     }
 
     else if (event.target.classList.contains('header__button')) {
-      console.log('kek');
       popupLogin.classList.toggle('popup_is-opened');
       popupSignup.classList.remove('popup_is-opened');
     }
