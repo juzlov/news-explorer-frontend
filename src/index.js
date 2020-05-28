@@ -81,20 +81,24 @@ SEARCH_BUTTON.addEventListener('click', function(event) {
 HEADER_BUTTON_LOGOUT.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
-  window.location.replace('../');
+  window.location.replace('./');
 });
 
 // слушатель кнопки logout в мини-попапе
 POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
-  window.location.replace('../');
+  /* window.location.replace('./'); */
+  window.location.href = '../';
+  console.log(window.location.href)
 });
 
 // проверка авторизации и смена хэдера
 if (auth.loginCheck()) {
+  console.log(window.location)
   header.loggedIn(localStorage.getItem('name'));
 } else {
+
   header.unauthorized();
 }
 

@@ -126,16 +126,16 @@ export default class Popup {
     this.disableInputs();
     this.api.signin(email.value, password.value)
     .then((result) => {
+      this.enableInputs();
       if (!result) {
-        this.enableInputs();
         errorServer.textContent = ("No response from server");
       } else if (result.token) {
         this.auth.signin(result.token, result.name, result._id);
         this.header.loggedIn(localStorage.getItem('name'));
         this.close(event);
-        window.location.replace('../');
+        /* window.location.replace('./'); */
+        window.location.href = '../';
       } else {
-        this.enableInputs();
         errorServer.textContent = (result.message);
       }
     });
@@ -151,13 +151,12 @@ export default class Popup {
     this.disableInputs();
     this.api.signup(email.value, password.value, name.value)
     .then((result) => {
+      this.enableInputs();
       if (!result) {
-        this.enableInputs();
         errorServer.textContent = ("No response from server");
       } else if (result.ok) {
         this.close(event);
       } else {
-        this.enableInputs();
         errorServer.textContent = (result.message);
       }
     });

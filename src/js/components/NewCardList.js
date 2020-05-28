@@ -99,7 +99,11 @@ export default class NewsCardList {
     const specialKeywords = document.querySelectorAll('.special-keyword');
 
     specialKeywords[0].textContent = ordered[0][0];
+
+    if (ordered.length > 1) {
     specialKeywords[1].textContent = ', ' + ordered[1][0];
+    }
+
     if (ordered.length > 3) {
       specialKeywords[2].textContent = ' и ' + (ordered.length-2) + ' другим';
     } else if (ordered.length === 3) {
