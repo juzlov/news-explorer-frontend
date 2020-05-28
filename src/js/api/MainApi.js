@@ -1,24 +1,13 @@
 // Отвечает за взаимодействие с написанным Node.js API
 
 export default class MainApi {
-  constructor(headers, email, password, name, keyword, title, text, date, source, link, image, owner){
-    this.email = email;
-    this.password = password;
-    this.name = name;
-    this.keyword = keyword;
-    this.title = title;
-    this.text = text;
-    this.date = date;
-    this.source = source;
-    this.link = link;
-    this.image = image;
-    this.owner = owner;
-    this.headers = headers;
+  constructor(options){
+    this.options = options;
   }
 
   // регистрирует нового пользователя
   signup(email, password, name){
-    return fetch(('http://localhost:3000/signup'), {
+    return fetch((this.options.server + 'signup'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +31,7 @@ export default class MainApi {
 
   // аутентифицирует пользователя на основе почты и пароля
   signin(email, password){
-    return fetch(('http://localhost:3000/signin'), {
+    return fetch((this.options.server + 'signin'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +49,7 @@ export default class MainApi {
 
   // забирает все статьи
   getArticles() {
-    return fetch(('http://localhost:3000/articles/'), {
+    return fetch((this.options.server + 'articles/'), {
       method: 'GET',
       headers: {
         credentials: 'include',
@@ -74,7 +63,7 @@ export default class MainApi {
 
   // удаляет статью
   removeArticle(id) {
-    return fetch(('http://localhost:3000/articles/' + id), {
+    return fetch((this.options.server + 'articles/' + id), {
       method: 'DELETE',
       headers: {
         credentials: 'include',
@@ -92,7 +81,7 @@ export default class MainApi {
 
   // добавляет статью в избранное
   faveArticle(keyword, title, text, date, source, link, image) {
-    return fetch(('http://localhost:3000/articles'), {
+    return fetch((this.options.server + 'articles'), {
       method: 'POST',
       headers: {
         credentials: 'include',

@@ -11,7 +11,8 @@ export const ERROR_MESSAGES = {
 // опции для запроса с внешнейго API
 export const OPTIONS = {
   "url": 'https://praktikum.tk/news/v2/everything?',
-  "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7'
+  "apikey": 'apiKey=48801e62dbcf41f7a0237706da6230e7',
+  "server": 'https://api.news-explore.tk/'
 };
 
 // константы открытия и закрытия попапа

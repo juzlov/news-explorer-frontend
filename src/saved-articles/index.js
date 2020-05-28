@@ -19,14 +19,14 @@ const newsCardList = new NewCardList(SAVED_ARTICLES, newscard, header, date, api
 // слушатель кнопки logout
 HEADER_BUTTON.addEventListener('click', () => {
   auth.logout();
-  window.location.replace('http://localhost:8080/');
+  window.location.replace('../');
 });
 
 // проверка авторизации и смена хэдера
 if (auth.loginCheck()) {
   header.loggedIn(localStorage.getItem('name'));
 } else {
-  window.location.replace('http://localhost:8080/');
+  window.location.replace('../');
 }
 
 // слушатель открытия мини-попапа
@@ -38,7 +38,7 @@ POPUP_MINI_MENU_CLOSE.addEventListener('click', popup.close);
 // слушатель кнопки logout в мини-попапе
 POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
-  window.location.replace('http://localhost:8080/');
+  window.location.replace('../');
 });
 
 // вызов функции загрузки первоначальных карточек

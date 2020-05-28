@@ -14,7 +14,7 @@ import {loginButtonDisabler, signupButtonDisabler} from './js/utils/buttonDisabl
 import FormValidator from './js/components/FormValidator.js';
 import './pages/index.css';
 
-const api = new MainApi();
+const api = new MainApi(OPTIONS);
 const auth = new Auth();
 const header = new Header();
 const validation = new FormValidator(ERROR_MESSAGES);
@@ -81,14 +81,14 @@ SEARCH_BUTTON.addEventListener('click', function(event) {
 HEADER_BUTTON_LOGOUT.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
-  window.location.replace('http://localhost:8080/');
+  window.location.replace('../');
 });
 
 // слушатель кнопки logout в мини-попапе
 POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
-  window.location.replace('http://localhost:8080/');
+  window.location.replace('../');
 });
 
 // проверка авторизации и смена хэдера

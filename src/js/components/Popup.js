@@ -133,7 +133,7 @@ export default class Popup {
         this.auth.signin(result.token, result.name, result._id);
         this.header.loggedIn(localStorage.getItem('name'));
         this.close(event);
-        window.location.replace('http://localhost:8080/');
+        window.location.replace('../');
       } else {
         this.enableInputs();
         errorServer.textContent = (result.message);
