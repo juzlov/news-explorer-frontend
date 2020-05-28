@@ -88,14 +88,11 @@ HEADER_BUTTON_LOGOUT.addEventListener('click', () => {
 POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
   header.unauthorized();
-  /* window.location.replace('./'); */
-  window.location.href = '../';
-  console.log(window.location.href)
+  window.location.replace('./');
 });
 
 // проверка авторизации и смена хэдера
 if (auth.loginCheck()) {
-  console.log(window.location)
   header.loggedIn(localStorage.getItem('name'));
 } else {
 

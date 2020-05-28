@@ -1,23 +1,20 @@
 # News-explorer (Frontend)
 News-explorer (Frontend) is fronted part of News Explorer project, developed as part of [Yandex-Praktikum](https://praktikum.yandex.ru/) training program.
 
-Version 0.1.0
+Version 1.0.0
 
 ## About
 
-This project is an independent frontend part that can be linked to the [News-explorer API](https://github.com/juzlov/news-explorer-api)
+This project is an independent frontend part that linked to the [News-explorer API](https://github.com/juzlov/news-explorer-api)
 
 Главная идея сайта - находить самые свежие статьи на любую тему и сохранять их в своем личном кабинете.
-На данном этапе разработки сверстаны две страницы - главная страница и страница с сохраненными статьями.
-
-На следующем этапе ожидаются реализация работы сайта с внешним API, правильная работа всех кнопок, авторизация пользователей, открытие и закрытие попапов.
-
-Для просмотра выключенных блоков, в файле ./src/pages/index.css удалите у класса .disabled строку "display: none;" - скрытые блоки станут видимыми.
+На данном этапе разработки реализована работа сайта с внешним API, правильная работа всех кнопок, авторизация пользователей, открытие и закрытие попапов.
 
 ## Used in project
 - **HTML**
 - **CSS**
 - **Webpack**
+- **JavaScript**
 
 ## How to start
 Please, before start check versions of following components:
@@ -42,3 +39,7 @@ Deploy on Github Pages:
 ```
 npm run deploy
 ```
+## Project link
+
+[News-explorer](https://juzlov.github.io/news-explorer-frontend/)
+

@@ -38,7 +38,7 @@ POPUP_MINI_MENU_CLOSE.addEventListener('click', popup.close);
 // слушатель кнопки logout в мини-попапе
 POPUP_MINI_BUTTON.addEventListener('click', () => {
   auth.logout();
-  window.location.replace('/');
+  window.location.replace('././');
 });
 
 // вызов функции загрузки первоначальных карточек

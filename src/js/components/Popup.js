@@ -133,8 +133,7 @@ export default class Popup {
         this.auth.signin(result.token, result.name, result._id);
         this.header.loggedIn(localStorage.getItem('name'));
         this.close(event);
-        /* window.location.replace('./'); */
-        window.location.href = '../';
+        window.location.replace('./');
       } else {
         errorServer.textContent = (result.message);
       }
