@@ -104,3 +104,8 @@ loginButtonDisabler();
 
 // вызов функции отключения кнопки регистрация в Signup-попапе
 signupButtonDisabler();
+
+
+
+const searchResultButton = document.querySelector('.search-results__button');
+searchResultButton.addEventListener('click', newsCardList.renderMore);

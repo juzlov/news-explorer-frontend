@@ -7,39 +7,32 @@ export default class NewsCardList {
     this.newsapi = newsapi;
     this.date = date;
     this.api = api;
+    this.renderMore = this.renderMore.bind(this);
+    this.foundedArticles = [];
   }
 
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(res) {
-    let articles = [];
-    articles = res;
+    this.foundedArticles = res;
 
     let numberOfArticles = document.querySelectorAll('.articles__article');
-    this.searchResultButton = document.querySelector('.search-results__button');
-    let newscards = this;
 
-    // отправляет к другому методу, отрисовывающему карточки при нажатии кнопки Показать еще
-    function render() {
-      newscards.renderMore(articles);
-    }
-
-    this.searchResultButton.addEventListener('click', render);
-
-    if (numberOfArticles.length < articles.length) {
+    if (numberOfArticles.length < this.foundedArticles.length) {
       for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
-        this.newscard.create(articles[i]);
+        this.newscard.create(this.foundedArticles[i]);
       }
     }
-    else if (numberOfArticles.length === articles.length) {
+    else if (numberOfArticles.length === this.foundedArticles.length) {
       const searchResultButton = document.querySelector('.search-results__button');
       searchResultButton.classList.add('disabled');
     }
   }
 
   // работает при нажатии на кнопку Показать еще
-  renderMore(res) {
+  renderMore() {
     let articles = [];
-    articles = res;
+    articles = this.foundedArticles;
+
     let numberOfArticles = document.querySelectorAll('.articles__article');
 
     if (numberOfArticles.length < articles.length) {
