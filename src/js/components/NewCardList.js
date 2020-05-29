@@ -155,6 +155,7 @@ export default class NewsCardList {
     .then((res) => {
       this.renderSaved(res);
       this.articleTitlesSet();
-  })
+    })
+    .catch((err) => console.log(err));
   }
 }

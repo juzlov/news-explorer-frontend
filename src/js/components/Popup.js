@@ -137,7 +137,8 @@ export default class Popup {
       } else {
         errorServer.textContent = (result.message);
       }
-    });
+    })
+    .catch((err) => console.log(err));
   }
 
   // отправка на сервер информации для корректной регистрации
@@ -158,7 +159,8 @@ export default class Popup {
       } else {
         errorServer.textContent = (result.message);
       }
-    });
+    })
+    .catch((err) => console.log(err));
   }
 
   // отключает ввод в инпут во время отправки запроса на сервер

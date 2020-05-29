@@ -26,7 +26,6 @@ export default class MainApi {
         return res;
       }
     }).then((result) => result)
-      .catch((err) => console.log(err));
   }
 
   // аутентифицирует пользователя на основе почты и пароля
@@ -44,7 +43,6 @@ export default class MainApi {
     })
     .then((res) => res.json())
     .then((result) => result)
-    .catch((err) => console.log(err));
   }
 
   // забирает все статьи
@@ -58,7 +56,6 @@ export default class MainApi {
     })
     .then((res) => res.json())
     .then((result) => result)
-      .catch((err) => console.log(err));
   }
 
   // удаляет статью
@@ -76,7 +73,6 @@ export default class MainApi {
     })
     .then((res) => res.json())
     .then((result) => result)
-      .catch((err) => console.log(err));
   }
 
   // добавляет статью в избранное
@@ -101,6 +97,5 @@ export default class MainApi {
     })
     .then((res) => res.json())
     .then((result) => result)
-      .catch((err) => console.log(err));
   }
 }

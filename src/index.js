@@ -8,7 +8,7 @@ import NewsApi from './js/api/NewsApi.js';
 import {ERROR_MESSAGES, OPTIONS, POPUP_MINI_MENU_BUTTON, POPUP_MINI_BUTTON_AUTHORIZE, POPUP_MINI_BUTTON, HEADER_BUTTON_AUTHORIZE,
   HEADER_BUTTON_LOGOUT, POPUP_LOGIN_CLOSE, REGISTER_LINK, LOGIN_LINK, LOGIN_SUCCESS_LINK, POPUP_SIGNUP_CLOSE,
   POPUP_SIGNUP_SUCCESS_CLOSE, POPUP_MINI_MENU_CLOSE, ARTICLES, SIGNUP_EMAIL, SIGNUP_PASSWORD, SIGNUP_NAME,
-  LOGIN_EMAIL, LOGIN_PASSWORD, BUTTON_LOGIN, SEARCH_BUTTON, BUTTON_SIGNUP} from './js/constants/constants.js';
+  LOGIN_EMAIL, LOGIN_PASSWORD, BUTTON_LOGIN, SEARCH_BUTTON, BUTTON_SIGNUP, SEARCH_RESULT_BUTTON} from './js/constants/constants.js';
 import {date} from './js/utils/date.js';
 import {loginButtonDisabler, signupButtonDisabler} from './js/utils/buttonDisablers.js';
 import FormValidator from './js/components/FormValidator.js';
@@ -91,6 +91,9 @@ POPUP_MINI_BUTTON.addEventListener('click', () => {
   window.location.replace('./');
 });
 
+// слушатель кнопки показать еще
+SEARCH_RESULT_BUTTON.addEventListener('click', newsCardList.renderMore);
+
 // проверка авторизации и смена хэдера
 if (auth.loginCheck()) {
   header.loggedIn(localStorage.getItem('name'));
@@ -105,7 +108,3 @@ loginButtonDisabler();
 // вызов функции отключения кнопки регистрация в Signup-попапе
 signupButtonDisabler();
 
-
-
-const searchResultButton = document.querySelector('.search-results__button');
-searchResultButton.addEventListener('click', newsCardList.renderMore);

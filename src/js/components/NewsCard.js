@@ -52,6 +52,7 @@ export default class NewsCard {
             favIcon.classList.add('articles__article-fav-icon_liked');
           }
         })
+        .catch((err) => console.log(err));
       } else {
         api.removeArticle(article.id)
         .then((result) => {
