@@ -1,7 +1,7 @@
 # News-explorer (Frontend)
 News-explorer (Frontend) is fronted part of News Explorer project, developed as part of [Yandex-Praktikum](https://praktikum.yandex.ru/) training program.
 
-Version 1.0.0
+Version 1.0.1
 
 ## About
 
