@@ -41,7 +41,9 @@ export default class MainApi {
               "password": `${password}`
           })
     })
-    .then((res) => res.json())
+    .then((res) => {if (res.ok) {
+      return res.json()
+    }})
     .then((result) => result)
   }
 
@@ -54,7 +56,9 @@ export default class MainApi {
         'Content-Type': 'application/json',
       }
     })
-    .then((res) => res.json())
+    .then((res) => {if (res.ok) {
+      return res.json()
+    }})
     .then((result) => result)
   }
 
@@ -71,7 +75,9 @@ export default class MainApi {
             "_id": `${localStorage.getItem('_id')}`
         })
     })
-    .then((res) => res.json())
+    .then((res) => {if (res.ok) {
+      return res.json()
+    }})
     .then((result) => result)
   }
 
@@ -95,7 +101,9 @@ export default class MainApi {
               "_id": `${localStorage.getItem('_id')}`
           })
     })
-    .then((res) => res.json())
+    .then((res) => {if (res.ok) {
+      return res.json()
+    }})
     .then((result) => result)
   }
 }
