@@ -41,9 +41,8 @@ export default class MainApi {
               "password": `${password}`
           })
     })
-    .then((res) => {if (res.ok) {
-      return res.json()
-    }})
+    // здесь не проводится проверка на res.ok, т.к. кастомная ошибка передается с сервера в поле res.message
+    .then((res) => res.json())
     .then((result) => result)
   }
 

@@ -166,16 +166,30 @@ export default class Popup {
   // отключает ввод в инпут во время отправки запроса на сервер
   disableInputs() {
     const inputs = document.querySelectorAll('.popup__input');
+    const buttons = document.querySelectorAll('.popup__button');
+
     for (let i=0; i<inputs.length; i++) {
       inputs[i].setAttribute('disabled', true);
+    }
+
+    for (let i=0; i<buttons.length; i++) {
+      buttons[i].setAttribute('disabled', true);
+      buttons[i].classList.add('popup__button_disabled');
     }
   }
 
   // включает ввод в инпут
   enableInputs() {
     const inputs = document.querySelectorAll('.popup__input');
+    const buttons = document.querySelectorAll('.popup__button');
+
     for (let i=0; i<inputs.length; i++) {
       inputs[i].removeAttribute('disabled', true);
+    }
+
+    for (let i=0; i<buttons.length; i++) {
+      buttons[i].removeAttribute('disabled', true);
+      buttons[i].classList.remove('popup__button_disabled');
     }
   }
 }
