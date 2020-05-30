@@ -5,7 +5,7 @@ import NewCardList from '../js/components/NewCardList.js';
 import NewsCard from '../js/components/NewsCard.js';
 import MainApi from '../js/api/MainApi.js';
 import Popup from '../js/components/Popup.js';
-import { POPUP_MINI_MENU_BUTTON, POPUP_MINI_BUTTON, POPUP_MINI_MENU_CLOSE, HEADER_BUTTON, SAVED_ARTICLES, OPTIONS} from '../js/constants/constants.js';
+import { popupMiniMenuButton, popupMiniButton, popupMiniMenuClose, headerButton, savedArticles, OPTIONS} from '../js/constants/constants.js';
 import {date} from '../js/utils/date.js';
 
 const api = new MainApi(OPTIONS);
@@ -13,11 +13,11 @@ const auth = new Auth();
 const header = new Header();
 const popup = new Popup();
 const newscard = new NewsCard(api);
-const newsCardList = new NewCardList(SAVED_ARTICLES, newscard, header, date, api);
+const newsCardList = new NewCardList(savedArticles, newscard, header, date, api);
 
 
 // слушатель кнопки logout
-HEADER_BUTTON.addEventListener('click', () => {
+headerButton.addEventListener('click', () => {
   auth.logout();
   window.location.replace('././');
 });
@@ -30,13 +30,13 @@ if (auth.loginCheck()) {
 }
 
 // слушатель открытия мини-попапа
-POPUP_MINI_MENU_BUTTON.addEventListener('click', popup.open);
+popupMiniMenuButton.addEventListener('click', popup.open);
 
 // слушатель закрытия мини-попапа
-POPUP_MINI_MENU_CLOSE.addEventListener('click', popup.close);
+popupMiniMenuClose.addEventListener('click', popup.close);
 
 // слушатель кнопки logout в мини-попапе
-POPUP_MINI_BUTTON.addEventListener('click', () => {
+popupMiniButton.addEventListener('click', () => {
   auth.logout();
   window.location.replace('././');
 });

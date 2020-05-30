@@ -16,40 +16,40 @@ export const OPTIONS = {
 };
 
 // константы открытия и закрытия попапа
-const POPUP_MINI_MENU_BUTTON = document.querySelector('.header__mini-menu');
-const POPUP_MINI_BUTTON_AUTHORIZE = document.querySelector('.popup-mini-menu__button_authorize');
-const POPUP_MINI_BUTTON = document.querySelector('.popup-mini-menu__button');
-const HEADER_BUTTON_AUTHORIZE = document.querySelector('.header__button_authorize');
-const HEADER_BUTTON_LOGOUT = document.querySelector('.header__button_logout');
-const POPUP_LOGIN_CLOSE = document.querySelector('.popup-login__close');
-const REGISTER_LINK = document.querySelector('.popup__link_register');
-const LOGIN_LINK = document.querySelector('.popup__link_login');
-const LOGIN_SUCCESS_LINK = document.querySelector('.popup-signup-success__link_login');
-const POPUP_SIGNUP_CLOSE = document.querySelector('.popup-signup__close');
-const POPUP_SIGNUP_SUCCESS_CLOSE = document.querySelector('.popup-signup-success');
-const POPUP_MINI_MENU_CLOSE = document.querySelector('.popup-mini-menu__close');
+const popupMiniMenuButton = document.querySelector('.header__mini-menu');
+const popupMiniButtonAuthorize = document.querySelector('.popup-mini-menu__button_authorize');
+const popupMiniButton = document.querySelector('.popup-mini-menu__button');
+const headerButtonAuthorize = document.querySelector('.header__button_authorize');
+const headerButtonLogout = document.querySelector('.header__button_logout');
+const popupLoginClose = document.querySelector('.popup-login__close');
+const registerLink = document.querySelector('.popup__link_register');
+const loginLink = document.querySelector('.popup__link_login');
+const loginSuccessLink = document.querySelector('.popup-signup-success__link_login');
+const popupSignupClose = document.querySelector('.popup-signup__close');
+const popupSignupSuccessClose = document.querySelector('.popup-signup-success');
+const popupMiniMenuClose = document.querySelector('.popup-mini-menu__close');
 
 // константы секций со статьями внутри
-const SAVED_ARTICLES = document.querySelector('.saved-articles');
-const ARTICLES = document.querySelector('.articles');
+const savedArticles = document.querySelector('.saved-articles');
+const articles = document.querySelector('.articles');
 
 // константы полей в форме регистрации
-const SIGNUP_EMAIL = document.querySelector('#signup-email');
-const SIGNUP_PASSWORD = document.querySelector('#signup-password');
-const SIGNUP_NAME = document.querySelector('#name');
+const signupEmail = document.querySelector('#signup-email');
+const signupPassword = document.querySelector('#signup-password');
+const signupName = document.querySelector('#name');
 
 // константы полей в форме регистрации
-const LOGIN_EMAIL = document.querySelector('#login-email');
-const LOGIN_PASSWORD = document.querySelector('#login-password');
+const loginEmail = document.querySelector('#login-email');
+const loginPassword = document.querySelector('#login-password');
 
 // константы кнопок
-const SEARCH_BUTTON = document.querySelector('.search__button');
-const BUTTON_SIGNUP = document.querySelector('.popup-signup__button');
-const BUTTON_LOGIN = document.querySelector('.popup-login__button');
-const HEADER_BUTTON = document.querySelector('.header__button');
-const SEARCH_RESULT_BUTTON = document.querySelector('.search-results__button');
+const searchButton = document.querySelector('.search__button');
+const buttonSignup = document.querySelector('.popup-signup__button');
+const buttonLogin = document.querySelector('.popup-login__button');
+const headerButton = document.querySelector('.header__button');
+const searchResultButton = document.querySelector('.search-results__button');
 
-export {POPUP_MINI_MENU_BUTTON, POPUP_MINI_BUTTON_AUTHORIZE, POPUP_MINI_BUTTON, HEADER_BUTTON_AUTHORIZE,
-  HEADER_BUTTON_LOGOUT, POPUP_LOGIN_CLOSE, REGISTER_LINK, LOGIN_LINK, LOGIN_SUCCESS_LINK, POPUP_SIGNUP_CLOSE,
-  POPUP_SIGNUP_SUCCESS_CLOSE, POPUP_MINI_MENU_CLOSE, ARTICLES, SIGNUP_EMAIL, SIGNUP_PASSWORD, SIGNUP_NAME,
-  LOGIN_EMAIL, LOGIN_PASSWORD, BUTTON_LOGIN, SEARCH_BUTTON, BUTTON_SIGNUP, HEADER_BUTTON, SAVED_ARTICLES, SEARCH_RESULT_BUTTON};
+export {popupMiniMenuButton, popupMiniButtonAuthorize, popupMiniButton, headerButtonAuthorize,
+  headerButtonLogout, popupLoginClose, registerLink, loginLink, loginSuccessLink, popupSignupClose,
+  popupSignupSuccessClose, popupMiniMenuClose, articles, signupEmail, signupPassword, signupName,
+  loginEmail, loginPassword, buttonLogin, searchButton, buttonSignup, headerButton, savedArticles, searchResultButton};
