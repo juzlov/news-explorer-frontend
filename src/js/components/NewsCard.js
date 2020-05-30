@@ -103,20 +103,20 @@ export default class NewsCard {
         this.image = 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg';
       }
 
-      let articles = document.querySelector('.articles');
+      const articles = document.querySelector('.articles');
 
       this.article = document.createElement('div');
-      let articleText = document.createElement('p');
-      let articleDate = document.createElement('p');
-      let articleSource = document.createElement('p');
-      let articleTitle = document.createElement('p');
-      let articleLink = document.createElement('a');
-      let articleImage = document.createElement('img');
-      let articleTopside = document.createElement('div');
-      let articleBottom = document.createElement('div');
-      let articleFavContainer = document.createElement('div');
-      let articleFavButton = document.createElement('button');
-      let loginMessage = document.createElement('button');
+      const articleText = document.createElement('p');
+      const articleDate = document.createElement('p');
+      const articleSource = document.createElement('p');
+      const articleTitle = document.createElement('p');
+      const articleLink = document.createElement('a');
+      const articleImage = document.createElement('img');
+      const articleTopside = document.createElement('div');
+      const articleBottom = document.createElement('div');
+      const articleFavContainer = document.createElement('div');
+      const articleFavButton = document.createElement('button');
+      const loginMessage = document.createElement('button');
 
       this.article.classList.add('articles__article');
 
@@ -170,20 +170,20 @@ export default class NewsCard {
       this.keyword = card.keyword;
       this.id = card._id;
 
-      let articles = document.querySelector('.saved-articles-list__container');
+      const articles = document.querySelector('.saved-articles-list__container');
 
       this.article = document.createElement('div');
-      let articleText = document.createElement('p');
-      let articleDate = document.createElement('p');
-      let articleSource = document.createElement('p');
-      let articleTitle = document.createElement('p');
-      let articleLink = document.createElement('a');
-      let articleImage = document.createElement('img');
-      let articleKeyword = document.createElement('p');
-      let articleTopside = document.createElement('div');
-      let articleBottom = document.createElement('div');
-      let articleTrashContainer = document.createElement('div');
-      let articleTrashButton = document.createElement('button');
+      const articleText = document.createElement('p');
+      const articleDate = document.createElement('p');
+      const articleSource = document.createElement('p');
+      const articleTitle = document.createElement('p');
+      const articleLink = document.createElement('a');
+      const articleImage = document.createElement('img');
+      const articleKeyword = document.createElement('p');
+      const articleTopside = document.createElement('div');
+      const articleBottom = document.createElement('div');
+      const articleTrashContainer = document.createElement('div');
+      const articleTrashButton = document.createElement('button');
 
       this.article.classList.add('articles__article');
 

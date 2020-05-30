@@ -15,7 +15,7 @@ export default class NewsCardList {
   renderResults(res) {
     this.foundedArticles = res;
 
-    let numberOfArticles = document.querySelectorAll('.articles__article');
+    const numberOfArticles = document.querySelectorAll('.articles__article');
 
     if ((numberOfArticles.length === 0) && (this.foundedArticles.length < 3)) {
       for (let i = 0;  i < (this.foundedArticles.length); i++) {
@@ -38,7 +38,7 @@ export default class NewsCardList {
     let articles = [];
     articles = this.foundedArticles;
 
-    let numberOfArticles = document.querySelectorAll('.articles__article');
+    const numberOfArticles = document.querySelectorAll('.articles__article');
 
     if (numberOfArticles.length < articles.length) {
       for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
@@ -72,7 +72,7 @@ export default class NewsCardList {
       keywordsArray.push(keywords[i].textContent);
     }
 
-    let lastNum = keywordsArray.length.toString().slice(-1);
+    const lastNum = keywordsArray.length.toString().slice(-1);
 
     // выводит разные склонения фразы в зависимости от кол-ва сохраненных статей
     if (keywordsArray.length === 0) {
@@ -133,7 +133,7 @@ export default class NewsCardList {
 
       this.newsapi.getNews(searchInput.value, this.date(7), this.date(0))
       .then((res) => {
-        let result = res;
+        const result = res;
 
         if (result.length === 0){
           searchLoader.classList.add('disabled');
