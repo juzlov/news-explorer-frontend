@@ -1,0 +1,9 @@
+@import url(./__error-header/search-results__error-header.css);
+@import url(./__error-text/search-results__error-text.css);
+
+.search-results__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}

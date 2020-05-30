@@ -17,7 +17,12 @@ export default class NewsCardList {
 
     let numberOfArticles = document.querySelectorAll('.articles__article');
 
-    if (numberOfArticles.length < this.foundedArticles.length) {
+    if ((numberOfArticles.length === 0) && (this.foundedArticles.length < 3)) {
+      for (let i = 0;  i < (this.foundedArticles.length); i++) {
+        this.newscard.create(this.foundedArticles[i]);
+      }
+    }
+    else if (numberOfArticles.length <= this.foundedArticles.length) {
       for (let i = numberOfArticles.length;  i <= (numberOfArticles.length+2); i++) {
         this.newscard.create(this.foundedArticles[i]);
       }
@@ -112,6 +117,7 @@ export default class NewsCardList {
     const searchContainer = document.querySelector('.search-results');
     const searchLoader = document.querySelector('.search-results__loading');
     const searchNoResult = document.querySelector('.search-results__no-results');
+    const searchError = document.querySelector('.search-results__error');
     const searchResultButton = document.querySelector('.search-results__button');
     const searchArticles = document.querySelector('.articles');
 
@@ -143,7 +149,7 @@ export default class NewsCardList {
       })
       .catch((err) => {
         searchLoader.classList.add('disabled');
-        searchNoResult.classList.remove('disabled');
+        searchError.classList.remove('disabled');
         console.log(err);
       });
     }
