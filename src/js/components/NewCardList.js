@@ -131,7 +131,10 @@ export default class NewsCardList {
       searchResultButton.classList.add('disabled');
       searchNoResult.classList.add('disabled');
 
-      this.newsapi.getNews(searchInput.value, this.date(7), this.date(0))
+      const daysFrom = 7;
+      const daysTo = 0;
+
+      this.newsapi.getNews(searchInput.value, this.date(daysFrom), this.date(daysTo))
       .then((res) => {
         const result = res;
 
