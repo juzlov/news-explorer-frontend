@@ -3,8 +3,12 @@
 @import url(./__title/popup__title.css);
 
 .popup__content {
+  width: 430px;
+  background-color: #fff;
   border-radius: 16px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 34px 36px;
   display: flex;
   flex-direction: column;
-  width: 85%;
 }

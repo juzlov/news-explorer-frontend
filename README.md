@@ -1,23 +1,32 @@
 # News-explorer (Frontend)
 News-explorer (Frontend) is fronted part of News Explorer project, developed as part of [Yandex-Praktikum](https://praktikum.yandex.ru/) training program.
 
-Version 0.1.0
+Version 1.0.3
 
 ## About
 
-This project is an independent frontend part that can be linked to the [News-explorer API](https://github.com/juzlov/news-explorer-api)
+This project is an independent frontend part linked to the [News-explorer API](https://github.com/juzlov/news-explorer-api)
 
-Главная идея сайта - находить самые свежие статьи на любую тему и сохранять их в своем личном кабинете.
-На данном этапе разработки сверстаны две страницы - главная страница и страница с сохраненными статьями.
+This is a two-page web application where you can find the latest articles on any topic and save them in your personal account.
 
-На следующем этапе ожидаются реализация работы сайта с внешним API, правильная работа всех кнопок, авторизация пользователей, открытие и закрытие попапов.
+- Javascript structure is implemented via Classes
+- To update page information, fetch requests are sent to the server
+- Fields are validated on client, before sending to the server
+- The project built by Webpack
 
-Для просмотра выключенных блоков, в файле ./src/pages/index.css удалите у класса .disabled строку "display: none;" - скрытые блоки станут видимыми.
+The following functionality is implemented:
+
+- User registration and authorization
+- Search for recent articles by keyword
+- Adding an article to favorites
+- Storing saved user articles on a separate page
+- The opening and closing of popups
 
 ## Used in project
 - **HTML**
 - **CSS**
 - **Webpack**
+- **JavaScript**
 
 ## How to start
 Please, before start check versions of following components:
@@ -42,3 +51,21 @@ Deploy on Github Pages:
 ```
 npm run deploy
 ```
+## Demo
+
+[News-explorer](https://juzlov.github.io/news-explorer-frontend/)
+
+**Main page**
+![Main page](https://github.com/juzlov/news-explorer-frontend/blob/master/src/images/frontend_demo_1.PNG)
+
+**Saved articles page**
+![Main page](https://github.com/juzlov/news-explorer-frontend/blob/master/src/images/frontend_demo_2.PNG)
+
+**Main page - mobile version**
+![Main page](https://github.com/juzlov/news-explorer-frontend/blob/master/src/images/frontend_demo_3.PNG)
+
+**Saved articles page - mobile version**
+![Main page](https://github.com/juzlov/news-explorer-frontend/blob/master/src/images/frontend_demo_4.PNG)
+
+
+

@@ -6,8 +6,10 @@
 
 @media (max-width: 425px) {
   .header__mini-menu {
-    background: none;
+    background: url(../../../../../images/menu.svg);
     border: none;
     opacity: 100;
+    width: 24px;
+    height: 24px;
   }
 }

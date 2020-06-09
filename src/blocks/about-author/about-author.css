@@ -6,6 +6,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 5%;
 }
 
 @media (max-width: 425px) {

@@ -2,6 +2,7 @@
 @import url(./__header/search-results__header.css);
 @import url(./__loading/search-results__loading.css);
 @import url(./__no-results/search-results__no-results.css);
+@import url(./__error/search-results__error.css);
 
 .search-results {
   display: flex;

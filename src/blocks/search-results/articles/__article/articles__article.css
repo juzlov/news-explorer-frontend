@@ -1,9 +1,13 @@
 @import url(./__article-bottom/articles__article-bottom.css);
 @import url(./__article-topside/articles__article-topside.css);
+@import url(./__article-link/articles__article-link.css);
+@import url(./__login-message/articles__login-message.css);
 
 
 .articles__article{
   max-width: 400px;
+  max-height: 576px;
+  width: 100%;
   border-radius: 16px;
   background-color: #FFFFFF;
   display: flex;

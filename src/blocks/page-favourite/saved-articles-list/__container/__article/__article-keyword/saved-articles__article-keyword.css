@@ -1,7 +1,7 @@
 @import url(./__keyword-button/saved-articles__keyword-button.css);
 @import url(./__keyword-text/saved-articles__keyword-text.css);
 
-.saved-articles__article-keyword {
+/* .saved-articles__article-keyword {
   position: absolute;
   top: 24px;
   left: 24px;
@@ -26,7 +26,7 @@
     left: 16px;
     margin: 0;
   }
-}
+} */
 
 .special-keyword {
   font-weight: bold;

@@ -1,0 +1,13 @@
+@import url(./__content/popup-mini-menu__content.css);
+@import url(./__close/popup-mini-menu__close.css);
+@import url(./__logo/popup-mini-menu__logo.css);
+@import url(./__navigation/popup-mini-menu__navigation.css);
+@import url(./__navigation-list/popup-mini-menu__navigation-list.css);
+@import url(./__button/popup-mini-menu__button.css);
+
+@media (max-width: 425px) {
+  .popup-mini-menu {
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0;
+  }
+}

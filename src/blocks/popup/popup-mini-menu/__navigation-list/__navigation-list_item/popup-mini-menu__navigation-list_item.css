@@ -1,0 +1,10 @@
+@media (max-width: 425px) {
+  .popup-mini-menu__navigation-list_item {
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 3em;
+  }
+}

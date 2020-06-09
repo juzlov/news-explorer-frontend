@@ -22,8 +22,6 @@ body {
   display: none;
 }
 
-
-
-
-
-
+.popup_is-opened {
+  display: flex;
+}

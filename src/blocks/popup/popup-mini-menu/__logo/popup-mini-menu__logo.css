@@ -1,0 +1,6 @@
+@media (max-width: 425px) {
+  .popup-mini-menu__logo {
+    margin: 5%;
+    width: 35%;
+  }
+}

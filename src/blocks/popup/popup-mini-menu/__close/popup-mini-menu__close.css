@@ -1,0 +1,7 @@
+@media (max-width: 425px) {
+  .popup-mini-menu__close {
+    width: 16px;
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,9 @@
+@media (max-width: 425px) {
+  .popup-mini-menu__content {
+    background: #1A1B22;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 0px 0px 16px 16px;
+  }
+}

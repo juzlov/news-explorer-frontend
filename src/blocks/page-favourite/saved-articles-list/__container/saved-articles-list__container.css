@@ -22,7 +22,7 @@
     max-width: 768px;
     grid-template-columns: repeat(auto-fill, 224px);
     grid-gap: 8px 8px;
-    justify-content: unset;
+    justify-content: center;
   }
 }
 
